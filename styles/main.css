@@ -396,7 +396,7 @@ a {
 
 .services {
       padding: 130px 0;
-      background-color: #f0f0f7;
+      background-color: #f6f7fa;
 }
 
 .service {
@@ -750,8 +750,8 @@ a {
 }
 
 .our {
-      padding: 130px 40px;
-      background-color: #f0f0f7;
+      padding: 130px 40px 500px 40px;
+      background-color: #f6f7fa;
 }
 
 .our h2 {
@@ -851,6 +851,268 @@ a {
       background-color: #a4a4e2;
 }
 
+.hello {
+      position: relative;
+}
+
+.hello__container {
+      background-color: #5172fd;
+      position: absolute;
+      top: -300px;
+      right: 0;
+      left: 0;
+      border-radius: 30px;
+}
+
+.hello__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 40px 110px 40px;
+      position: relative;
+}
+
+.hello__content h3 {
+      text-align: center;
+      font-size: 2.8rem;
+      color: #fff;
+      max-width: 500px;
+}
+
+.hello__content p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #fff;
+      max-width: 400px;
+      margin: 20px 0;
+}
+
+.hello__content .img1 {
+      position: absolute;
+      height: 450px;
+      width: 450px;
+      object-fit: cover;
+      top: -120px;
+      left: -120px;
+}
+
+.hello__content .img2 {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+      bottom: -110px;
+      right: 40px;
+}
+
+.hello__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.hello__buttons a button {
+      background-color: #fff;
+      color: #000;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.hello__buttons a .bg-white {
+      background-color: transparent;
+      color: #fff;
+      border: solid 1px #dadaf6;
+}
+
+.hello__buttons a button:hover {
+      background-color: #a4a4e2;
+}
+
+.posts {
+      margin-top: 400px;
+}
+
+.posts__title {
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.post__text h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+}
+
+.post__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.post__buttons a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.post__buttons a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+      border: solid 1px #dadaf6;
+}
+
+.post__buttons a button:hover {
+      background-color: #a4a4e2;
+}
+
+.posts__content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      margin-top: 30px;
+}
+
+.post__item {
+      width: 33.33%;
+}
+
+.post__item img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 30px;
+      margin-bottom: 15px;
+}
+
+.title__date {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+}
+
+.title__date h4 {
+      font-size: 1.1rem;
+}
+
+.title__date p {
+      font-weight: 200;
+}
+
+.post__item h5 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: 500;
+}
+
+.post__item h6 {
+      font-size: 1rem;
+      color: #84848f;
+      font-weight: 400;
+}
+
+.works {
+      background-color: #f6f7fa;
+}
+
+.works__container {
+      margin-top: 130px;
+}
+
+.works__title {
+      padding-top: 130px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.work__text h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+}
+
+.work__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.work__buttons a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.work__buttons a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+      border: solid 1px #dadaf6;
+}
+
+.work__buttons a button:hover {
+      background-color: #a4a4e2;
+}
+
+.works__content {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      margin-top: 30px;
+      padding-bottom: 130px;
+}
+
+.work__item {
+      width: 40%;
+}
+
+.work__items {
+      width: 20%;
+}
+
+.work__items img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 30px;
+      margin-bottom: 15px;
+}
+
+.work__item img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 30px;
+      margin-bottom: 15px;
+}
+
 /* media query */
 
 @media (min-width: 1201px) {
@@ -872,7 +1134,7 @@ a {
 
 @media (min-width: 1920px) {
   .container {
-    max-width: 1500px;
+    max-width: 1400px;
     padding: 0 40px;
   }
   .navbar {
@@ -991,6 +1253,14 @@ a {
       }
 
       .our__content {
+            flex-wrap: wrap;
+      }
+
+      .posts__content {
+            flex-wrap: wrap;
+      }
+
+      .works__content {
             flex-wrap: wrap;
       }
 }

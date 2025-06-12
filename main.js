@@ -24,3 +24,6 @@ loadHTML("services", "sections/services.html", "services.js");
 loadHTML("passport", "sections/passport.html", "passport.js");
 loadHTML("prime", "sections/prime.html", "prime.js");
 loadHTML("our", "sections/our.html", "our.js");
+loadHTML("hello", "sections/hello.html", "hello.js");
+loadHTML("posts", "sections/posts.html", "posts.js");
+loadHTML("works", "sections/works.html", "works.js");
