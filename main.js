@@ -27,3 +27,4 @@ loadHTML("our", "sections/our.html", "our.js");
 loadHTML("hello", "sections/hello.html", "hello.js");
 loadHTML("posts", "sections/posts.html", "posts.js");
 loadHTML("works", "sections/works.html", "works.js");
+loadHTML("footer", "sections/footer.html", "footer.js");
