@@ -394,6 +394,462 @@ a {
       padding: 10px;
 }
 
+.services {
+      padding: 130px 0;
+      background-color: #f0f0f7;
+}
+
+.service {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+}
+
+.hero__texts {
+      width: 40%;
+}
+
+.hero__texts h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+      margin-top: 30px;
+      line-height: 4rem;
+      max-width: 200px;
+}
+
+.hero__texts p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #84848f;
+      line-height: 1.5rem;
+      max-width: 450px;
+      margin: 30px 0;
+}
+.service__buttons {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 20px;
+}
+
+.hero__texts a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.hero__texts a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+}
+
+.hero__texts a button:hover {
+      background-color: #a4a4e2;
+}
+
+.service__items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 60%;
+}
+
+.service__item {
+      width: 50%;
+}
+
+.service__item a img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+}
+
+.comments {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      width: 100%;
+}
+
+.comment {
+      width: 33.33%;
+}
+
+.comment__author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+}
+
+.comment__author img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+}
+
+.passport {
+      margin-top: 120px;
+      margin-bottom: 120px;
+}
+
+.passport__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+.passport__text h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+}
+
+.passport__text p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #84848f;
+      line-height: 1.5rem;
+      max-width: 450px;
+      margin: 10px 0;
+      text-align: center;
+}
+
+.passport__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+}
+
+.passport__left {
+      width: 60%;
+      background-color: #f8ae1d;
+      border-radius: 40px;
+      height: 650px;
+}
+
+.passport__right {
+      width: 40%;
+      position: relative;
+}
+
+.passport__left img {
+      width: 50%;
+      margin-top: 52px;
+      margin-left: 80px;
+}
+
+.abs {
+      position: absolute;
+      left: -150px;
+      top: -240px;
+      width: 100%;
+}
+
+.pass__item {
+      border: #dadaf6 1px solid;
+      border-radius: 20px;
+      padding: 30px 30px;
+      display: flex;
+      align-items: start;
+      gap: 20px;
+      background-color: #fff;
+      width: 100%;
+      margin-bottom: 25px;
+}
+
+.pass__item__number {
+      background-color: #e7e7f2;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+}
+
+.pass__item__details h3 {
+      font-size: 1.5rem;
+}
+
+.pass__item__details p {
+      color: #84848f;
+      max-width: 400px;
+      font-size: 16px;
+}
+
+.passport__button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+}
+
+.passport__button a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.passport__button a button:hover {
+      background-color: #a4a4e2;
+}
+
+.prime {
+      margin-top: 80px;
+      margin-bottom: 80px;
+}
+
+.prime hr {
+      border: solid 1px #dadaf6;
+}
+
+.prime__title {
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.prime__text h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+}
+
+.prime__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.prime__buttons a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.prime__buttons a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+      border: solid 1px #dadaf6;
+}
+
+.prime__buttons a button:hover {
+      background-color: #a4a4e2;
+}
+
+.prime__services {
+      margin-top: 30px;
+}
+
+.prime__services__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      width: 100%;
+}
+
+.prime__services__top .prime__item {
+      width: 50%;
+      height: 650px;
+      border-radius: 30px;
+      position: relative;
+}
+
+.prime__services__top .prime__item a img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 30px;
+}
+
+.prime__item__price {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 10px;
+}
+
+.prime__card {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.prime__card h5 {
+      font-size: 1.3rem;
+      font-weight: 400;
+}
+
+.prime__card i {
+      font-size: 2.2rem;
+      font-weight: 400;
+}
+
+.prime__services__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      width: 100%;
+      margin-top: 35px;
+}
+
+.prime__services__bottom .prime__item {
+      width: 50%;
+      height: 325px;
+      border-radius: 30px;
+      position: relative;
+}
+
+.prime__services__bottom .prime__item a img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 30px;
+}
+
+.our {
+      padding: 130px 40px;
+      background-color: #f0f0f7;
+}
+
+.our h2 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      color: #000;
+      text-align: center;
+}
+
+.our__content {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+}
+
+.our__item {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 25px;
+      border: #dadaf6 1px solid;
+}
+
+.our__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+}
+
+.our__top h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+}
+
+.our__top i {
+      font-size: 2rem;
+}
+
+.our__item p {
+      font-size: 18px;
+      color: #84848f;
+      margin-bottom: 50px;
+}
+
+.our__icon {
+      background-color: #dadaf6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 5px;
+      width: 40px;
+      height: 40px;
+}
+
+.our__icon i {
+      font-size: 1.8rem;
+}
+
+.our__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+}
+
+.our__buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+}
+
+.our__buttons a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.our__buttons a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+      border: solid 1px #dadaf6;
+}
+
+.our__buttons a button:hover {
+      background-color: #a4a4e2;
+}
 
 /* media query */
 
@@ -488,6 +944,54 @@ a {
       .hero1 h1 {
       font-size: 3rem;
       max-width: 500px;
+      }
+
+      .service {
+            flex-direction: column;
+            align-items: start;
+            width: 100%;
+      }
+
+      .service__items {
+            margin-top: 30px;
+      }
+
+      .comments {
+            flex-wrap: wrap;
+      }
+
+      .passport__content {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .passport__text {
+            align-items: start;
+      }
+
+      .passport__text p {
+            text-align: left;
+      }
+
+      .passport__right {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+      }
+
+      .abs {
+            left: 0;
+            top: -50px;
+      }
+
+      .passport__button {
+            align-items: start;
+      }
+
+      .our__content {
+            flex-wrap: wrap;
       }
 }
 

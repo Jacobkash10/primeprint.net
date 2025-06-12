@@ -20,4 +20,7 @@ async function loadHTML(id, file, script) {
 loadHTML("header", "sections/header.html", "header.js");
 loadHTML("hero", "sections/hero.html", "hero.js");
 loadHTML("badges", "sections/badges.html", "badges.js");
-// loadHTML("services", "sections/services", "services.js");
+loadHTML("services", "sections/services.html", "services.js");
+loadHTML("passport", "sections/passport.html", "passport.js");
+loadHTML("prime", "sections/prime.html", "prime.js");
+loadHTML("our", "sections/our.html", "our.js");
