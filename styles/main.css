@@ -457,6 +457,7 @@ a {
 .hero__texts a .bg-white {
       background-color: #ffffff;
       color: #000;
+      border: #e7e7f2 1px solid;
 }
 
 .hero__texts a button:hover {
@@ -502,9 +503,18 @@ a {
   color: white;
   border: none;
   font-size: 1.5rem;
-  padding: 10px 15px;
+  padding: 15px 15px;
   cursor: pointer;
   border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+      background-color: #a4a4e2;
+      transition: transform 0.4s ease;
 }
 
 .slider-btn.prev { left: 5px;  }
@@ -535,6 +545,10 @@ a {
       width: 60px;
       height: 60px;
       border-radius: 50%;
+}
+
+.comment__text p {
+      font-size: 1.1rem;
 }
 
 .passport {
@@ -723,6 +737,7 @@ a {
       height: 650px;
       border-radius: 30px;
       position: relative;
+      overflow: hidden;
 }
 
 .prime__services__top .prime__item a img {
@@ -730,6 +745,7 @@ a {
       object-fit: cover;
       height: 100%;
       border-radius: 30px;
+      transition: transform 0.3s ease;
 }
 
 .prime__item__price {
@@ -752,16 +768,28 @@ a {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: transform 0.8s ease;
 }
 
 .prime__card h5 {
       font-size: 1.3rem;
       font-weight: 400;
+      transition: transform 0.8s ease;
 }
 
 .prime__card i {
       font-size: 2.2rem;
       font-weight: 400;
+      transition: transform 0.8s ease;
+}
+
+.prime__item:hover .prime__card {
+  background-color: #000;
+}
+
+.prime__item:hover .prime__card h5,
+.prime__item:hover .prime__card i {
+      color: #fff;
 }
 
 .prime__services__bottom {
@@ -778,6 +806,14 @@ a {
       height: 325px;
       border-radius: 30px;
       position: relative;
+      overflow: hidden;
+}
+
+.inner {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 30px;
 }
 
 .prime__services__bottom .prime__item a img {
@@ -785,6 +821,11 @@ a {
       object-fit: cover;
       height: 100%;
       border-radius: 30px;
+      transition: transform 0.3s ease;
+}
+
+.prime__item:hover .inner img {
+  transform: scale(1.05);
 }
 
 .our {
