@@ -25,7 +25,7 @@ a {
 
 .promo {
       width: 100%;
-      background-color: red;
+      background-color: #9db29e;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -70,8 +70,8 @@ a {
 .search-bar {
       width: 60%;
       border: #a4a4e2 1px solid;
-      border-radius: 1%;
       position: relative;
+      border-radius: 25px;
 }
 
 .text {
@@ -84,11 +84,12 @@ a {
 
 .search-bar input {
       width: 100%;
-      padding: 0.5rem;
+      padding: 0.6rem .6rem .6rem 1rem;
       border: none;
       outline: none;
       font-size: 1rem;
       font-weight: 500;
+      border-radius: 30px;
 }
 
 .search-bar input::placeholder {
@@ -98,17 +99,17 @@ a {
 }
 
 .search-bar button {
-      width: 40px;
+      width: 45px;
       position: absolute;
-      right: 0px;
+      right: -2px;
       top: 50%;
       transform: translateY(-50%);
       background-color: transparent;
       border: none;
       cursor: pointer;
       background-color: #a4a4e2;
-      border-radius: 1%;
-      padding: 0.5rem;
+      border-radius: 0 25px 25px 0;
+      padding: 0.7rem;
 }
 
 .search-bar button i {
@@ -170,8 +171,9 @@ a {
 
 /* --- NAV BOTTOM --- */
 .nav-bottom {
-  background-color: #ffffff;
+  background-color: #fff;
   position: relative;
+  box-shadow: 0cqb 12px 15px -1px rgba(145,145,145,0.3);
 }
 
 .nav-bottom ul {
@@ -274,6 +276,7 @@ a {
 /* hero section */
 
 .hero {
+      margin-top: 50px;
       padding-top: 40px;
       padding-bottom: 40px;
 }
@@ -292,7 +295,7 @@ a {
 }
 
 .hero2 {
-      width: 30%;
+      width: 29%;
 }
 
 .hero3 {
@@ -1275,7 +1278,7 @@ a {
 
 .footer {
       background-color: #1e1e24;
-      padding: 100px 0px 100px 0px;
+      padding: 100px 0px 10px 0px;
 }
 
 .footer__top {
@@ -1466,6 +1469,48 @@ a {
 
 .socials .img4 {
       width: 20px;
+}
+
+.copyright {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+}
+
+.copy__text {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      color: #fff;
+      font-size: .9rem;
+}
+
+.copy__icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+}
+
+.copy__icons .img1 {
+      width: 60px;
+}
+
+.copy__icons .img2 {
+      width: 60px;
+}
+
+.copy__icons .img3 {
+      width: 100px;
+}
+
+.copy__icons .img4 {
+      width: 60px;
+}
+
+.copy__icons .img5 {
+      width: 75px;
 }
 
 /* media query */
