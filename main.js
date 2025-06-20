@@ -5,10 +5,9 @@ async function loadHTML(id, file, script) {
     document.getElementById(id).innerHTML = html;
 
     if (script) {
-      // Charger dynamiquement un fichier JS après HTML
       const module = await import(`./scripts/${script}`);
       if (module && typeof module.init === 'function') {
-        module.init(); // Appelle la fonction init du module
+        module.init();
       }
     }
   } catch (err) {
@@ -16,15 +15,17 @@ async function loadHTML(id, file, script) {
   }
 }
 
-// Appels : id, html, script JS correspondant
+import('./scripts/services.js').then(module => {
+  if (module && typeof module.init === 'function') {
+    module.init();
+  }
+});
+
+import('./scripts/our.js').then(module => {
+  if (module && typeof module.init === 'function') {
+    module.init();
+  }
+});
+
 loadHTML("header", "sections/header.html", "header.js");
-loadHTML("hero", "sections/hero.html", "hero.js");
-loadHTML("badges", "sections/badges.html", "badges.js");
-loadHTML("services", "sections/services.html", "services.js");
-loadHTML("passport", "sections/passport.html", "passport.js");
-loadHTML("prime", "sections/prime.html", "prime.js");
-loadHTML("our", "sections/our.html", "our.js");
-loadHTML("hello", "sections/hello.html", "hello.js");
-loadHTML("posts", "sections/posts.html", "posts.js");
-loadHTML("works", "sections/works.html", "works.js");
 loadHTML("footer", "sections/footer.html", "footer.js");
