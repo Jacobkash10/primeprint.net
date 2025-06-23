@@ -1828,7 +1828,7 @@ a {
 
       .footer__top {
             flex-direction: column;
-            gap: 10px;
+            gap: 0px;
             align-items: flex-start;
             width: 100%;
       }
