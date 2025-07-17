@@ -1,7 +1,7 @@
 export function init() {
-  const slider     = document.getElementById("slider");
-  const btnNext    = document.querySelector(".slider-btn.next");
-  const btnPrev    = document.querySelector(".slider-btn.prev");
+  const slider = document.getElementById("slider");
+  const btnNext = document.querySelector(".slider-btn.next");
+  const btnPrev = document.querySelector(".slider-btn.prev");
 
   if (!slider || !btnNext || !btnPrev) return;
 
@@ -12,7 +12,7 @@ export function init() {
     slider.querySelector(".service__item").getBoundingClientRect().width + GAP;
 
   const goTo = (i) => {
-    const maxIndex = slider.children.length - 2;
+    const maxIndex = slider.children.length - 2; 
     index = Math.max(0, Math.min(i, maxIndex));
     const offset = index * getItemWidth();
     slider.style.transform = `translateX(-${offset}px)`;
@@ -34,13 +34,8 @@ export function init() {
 
   goTo(0);
 
-  // Autoplay
   const autoplayInterval = setInterval(() => {
     const maxIndex = slider.children.length - 2;
-    if (index < maxIndex) {
-      goTo(index + 1);
-    } else {
-      goTo(0);
-    }
-  }, 9000);
+    goTo(index < maxIndex ? index + 1 : 0);
+  }, 3000);
 }
