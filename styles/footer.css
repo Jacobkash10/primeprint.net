@@ -149,13 +149,14 @@
       order: 1;
 }
 .copy__text a {
-      color: #a4a4e2;
+      color: #fff;
       text-decoration: none;
-      transition: transform 0.3s ease;
+      text-decoration: underline;
+      transition: color 0.3s ease;
 }
 
 .copy__text a:hover {
-      text-decoration: underline;
+      color: #a4a4e2;
 }
 
 .copy__icons {
