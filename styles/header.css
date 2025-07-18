@@ -45,8 +45,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 20px;
       border-bottom: #e7e7f0 1px solid;
 }
 
@@ -122,6 +121,17 @@
       font-size: 1.5rem;
       color: #000;
       transition: color 0.3s ease;
+}
+
+.text p {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.3s ease;
+}
+
+.text p:hover {
+      color: #a4a4e2;
 }
 
 .nav-right {
@@ -212,18 +222,20 @@
 }
 
 @media (min-width: 1920px) {
+
   .container {
     max-width: 1400px;
     padding: 0 40px;
   }
   .navbar {
-            padding: 20px 40px;
+            padding: 20px 15%;
       }
 }
 
 @media (max-width: 1200px) {
+
       .navbar {
-            padding: 10px 20px;
+            padding: 10px 10px;
       }
 
       .burger-toggle {

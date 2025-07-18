@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="styles/category.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/header.css">
+      <link rel="stylesheet" href="styles/footer.css">
+      <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+      <title>Primrprint/categories</title>
+</head>
+<body>
+      <div id="header"></div>
+
+      <section class="nav-bottom">
+            <ul>
+                  <li class="click-toggle" data-menu="majestic">
+                        <h5>All Products</h5>
+                        <i class='bxr  bx-chevron-down'  ></i>  
+                  </li>
+                  <li data-menu="business">
+                        Business Cards Products
+                  </li>
+                  <li data-menu="marketing">
+                        Marketing Products
+                  </li>
+                  <li data-menu="stationery">
+                        Stationery Products
+                  </li>
+                  <li data-menu="signs">
+                        Signs & Posters
+                  </li>
+                  <li data-menu="displays">
+                        Displays
+                  </li>
+                  <li data-menu="specialty">
+                       Specialty Products
+                  </li>
+                  <li data-menu="promo">
+                        Promo Products
+                  </li>
+                  <li data-menu="services">
+                        Services
+                  </li>
+            </ul>
+            <div class="submenu">
+                  <div class="submenu-content" id="submenu-content">
+                  </div>
+            </div>
+      </section>
+
+      <section class="categories">
+            <div class="category__banner container">
+                  <div class="category__banner__text">
+                        <h2>Browse All Print Products</h2>
+                        <p>from business cards to signs, packaging, and more. Don't see what you're looking for ? <a href="#">Click Here</a></p>
+                  </div>
+            </div>
+      </section>
+
+      <section class="filter">
+            <div class="container">
+                  <div class="filter-bar">
+                        <div class="categories">
+                              <button class="filter-btn active" data-category="all">All Products</button>
+                              <button class="filter-btn" data-category="Business Card">Business Card</button>
+                              <button class="filter-btn" data-category="Marketing Products">Marketing Products</button>
+                              <button class="filter-btn" data-category="Stationery Products">Stationery Products</button>
+                              <button class="filter-btn" data-category="Signs & Posters">Signs & Posters</button>
+                              <button class="filter-btn" data-category="Passport Pictures">Passport Pictures</button>
+                              <button class="filter-btn" data-category="Specialty Products">Specialty Products</button>
+                              <button class="filter-btn" data-category="Displays">Displays</button>
+                              <button class="filter-btn" data-category="Promotional Item">Promotional Item</button>
+                        </div>
+                  </div>
+
+                  <div class="sort">
+                        <label for="sortSelect">Sort by</label>
+                        <select id="sortSelect">
+                              <option value="recommended">Recommended</option>
+                              <option value="price-low">Price: Low to High</option>
+                              <option value="price-high">Price: High to Low</option>
+                        </select>
+                  </div>
+
+                  <div class="product-grid" id="productGrid"></div>
+
+            </div>
+      </section>
+
+      <section class="bottom__footer">
+            <div class="container">
+                  <div class="footer__top">
+                        <div class="footer__top__text">
+                              <h2>Crafted with Care. Delivered with Precision.</h2>
+                              <div class="footer__buttons">
+                                    <a href="#">
+                                          <button class="footer__button">Customize now</button>
+                                    </a>
+                                    <a href="#">
+                                          <button class="footer__button bg-white">Browse all services</button>
+                                    </a>
+                              </div>
+                        </div>
+                        <div class="footer__img">
+                              <img src="../assets/images/foot1.png" alt="foot1" class="img1">
+                              <img src="../assets/images/foot2.png" alt="foot2" class="img2">
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <div id="footer"></div>
+
+      <script src="main.js"></script>
+</body>
+</html>

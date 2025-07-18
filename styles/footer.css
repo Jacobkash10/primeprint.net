@@ -125,7 +125,7 @@
 }
 
 .socials .img3 {
-      width: 22px;
+      width: 28px;
 }
 
 .socials .img4 {
@@ -146,6 +146,7 @@
       gap: 2px;
       color: #fff;
       font-size: .9rem;
+      order: 1;
 }
 .copy__text a {
       color: #a4a4e2;
@@ -161,6 +162,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      order: 2;
 }
 
 .copy__icons .img1 {
@@ -184,12 +186,14 @@
 }
 
 @media (max-width: 1200px) {
+
       .newsletter {
             padding: 30px;
       }
 }
 
 @media (max-width: 1100px) {
+
       .footer__b__content {
             flex-direction: column;
             align-items: flex-start;
@@ -209,6 +213,14 @@
             flex-direction: column;
             gap: 20px;
       }
+
+      .copy__text {
+            order: 2;
+      }
+
+      .copy__icons {
+            order: 1;
+      }
 }
 
 @media (max-width: 600px) {
@@ -222,6 +234,7 @@
 }
 
 @media (max-width: 700px) {
+
       .copy__text {
             display: flex;
             flex-wrap: wrap;

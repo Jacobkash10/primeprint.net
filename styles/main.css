@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "TikTok Sans", sans-serif;
+      font-family: "Jost", sans-serif;
 }
 
 body {
@@ -28,6 +28,7 @@ a {
   background-color: #fff;
   position: relative;
   box-shadow: 0cqb 12px 15px -1px rgba(145,145,145,0.3);
+  padding: 0 20px;
 }
 
 .nav-bottom ul {
@@ -1362,14 +1363,14 @@ a {
             padding: 0 40px;
       }
 
+      .nav-bottom {
+            padding: 0 15%;
+      }
+
       .hero {
             padding-top: 40px;
             padding-bottom: 40px;
             margin-bottom: 30px;
-      }
-      .submenu {
-            left: 40px;
-            width: 94.2%;
       }
 
       .badges__container {
@@ -1379,6 +1380,10 @@ a {
 }
 
 @media (max-width: 1200px) {
+
+      .nav-bottom {
+            padding: 0 10px;
+      }
 
       .nav-bottom ul {
             flex-wrap: wrap;
