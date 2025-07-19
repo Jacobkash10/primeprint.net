@@ -33,5 +33,17 @@ import('./scripts/filterByCategory.js').then(module => {
   }
 });
 
+import('./scripts/servicePage.js').then(module => {
+  if (module && typeof module.init === 'function') {
+    module.init();
+  }
+});
+
+import('./scripts/serviceDetails.js').then(module => {
+  if (module && typeof module.init === 'function') {
+    module.init();
+  }
+});
+
 loadHTML("header", "sections/header.html", "header.js");
 loadHTML("footer", "sections/footer.html", "footer.js");

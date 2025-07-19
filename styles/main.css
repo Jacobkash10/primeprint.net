@@ -1297,9 +1297,9 @@ a {
 }
 
 .footer__top__text h2 {
-      font-size: 3rem;
+      font-size: 2.6rem;
       color: #fff;
-      max-width: 650px;
+      max-width: 550px;
       margin-bottom: 20px;
 }
 
@@ -1320,6 +1320,7 @@ a {
       font-weight: 500;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      text-transform: capitalize;
 }
 
 .footer__top__text a .bg-white {
