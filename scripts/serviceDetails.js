@@ -4,43 +4,85 @@ export function init() {
       id: 'graphic-design',
       icon: 'bxs-eyedropper',
       title: 'Graphic Design',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for Graphic Design service...'
+      description: 'Creative visuals that bring your brand to life. From logos to marketing materials, our expert designers turn your ideas into high-impact graphics tailored to your needs.',
+      about: 'At PrimePrint, we provide professional graphic design services to help you stand out. Whether you need branding, flyers, social media assets, or custom packaging, our design team works closely with you to ensure your message is clear, attractive, and consistent across all platforms.',
+      included: [
+        'Logo & brand asset creation',
+        'Print & web-ready files',
+        'Custom layouts & typography',
+        'Fast revisions & support',
+        'Delivered in multiple formats'
+      ]
     },
     {
-      id: 'passport-pictures',
+      id: 'passport-photos',
       icon: 'bxs-picture-in-picture-close',
-      title: 'Passport Pictures',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for Passport Pictures...'
+      title: 'Passport Photos',
+      description: 'Our passport photo service is 100% online. Easily take a photo of yourself or your baby from home. We’ll crop, adjust, and format it to meet official standards. Choose printed, digital, or both – we deliver to your door.',
+      about: 'At PrimePrint, we make getting passport photos easy, fast, and fully online. Just snap a photo at home and upload it securely. We format your image to meet U.S. or international standards for passports, visas, and IDs—saving you a trip to the photo studio.',
+      included: [
+        'Government-compliant sizing',
+        'High-resolution & white background',
+        'Print-ready or digital JPG option',
+        'Retouching',
+        'Fast delivery available'
+      ]
     },
     {
       id: 'eddm',
       icon: 'bxs-vector-square',
       title: 'EDDM',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for EDDM...'
+      description: 'Reach every household in your area affordably and effectively. USPS® EDDM® lets you blanket neighborhoods with postcards or flyers—no mailing list needed.',
+      about: 'Our EDDM Full Service handles everything from printing to delivery to USPS®. Select your routes, upload your artwork, and we’ll print, bundle, and submit it—all in one step. Perfect for real estate, restaurants, and local promotions.',
+      included: [
+        'USPS® EDDM® approved sizes',
+        'Route selection by ZIP code, income, or age',
+        'Full-service print + mail handling',
+        'Templates & online design tools',
+        'Delivery to local post offices included'
+      ]
     },
     {
       id: 'custom-printing',
       icon: 'bxs-printer',
       title: 'Custom Printing Solutions',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for Custom Printing...'
+      description: 'High-quality printing for business cards, flyers, signs, and more. We offer fast turnaround and premium print options for every type of material—from business essentials to marketing tools.',
+      about: 'PrimePrint delivers exceptional printing services backed by cutting-edge technology. From one-color business cards to full-color booklets, our streamlined process ensures sharp quality and vibrant color with lightning-fast turnaround. Everything is handled in-house—from press to delivery.',
+      included: [
+        'Flyers, posters, business cards, & signs',
+        'Offset & digital press options',
+        'Same-day turnaround available',
+        'Die cutting, binding & finishing',
+        'Quality checks for consistent color & resolution'
+      ]
     },
     {
       id: 'mailing-services',
       icon: 'bxs-diamond',
       title: 'Mailing Services',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for Mailing Services...'
+      description: "Get the most out of your campaign with print + mail in one place. We print, label, and mail your materials directly to your audience—saving you time and increasing your campaign's impact.",
+      about: "PrimePrint simplifies direct mailing by offering an all-in-one solution. We help you create, print, and mail your campaign materials quickly and efficiently. Whether you're promoting a product or service, our targeted mail services let you reach your audience with precision and professionalism.",
+      included: [
+        'Design, print, and mail in one order',
+        'Address verification & CASS certification',
+        'Fast turnaround (2–5 business days)',
+        'No shipping to mail house required',
+        'Targeted mailing lists available'
+      ]
     },
     {
       id: 'mailing-lists',
       icon: 'bxs-cube',
       title: 'Mailing lists',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.',
-      fullText: 'Full content for Mailing Lists...'
+      description: 'Build precise, up-to-date mailing lists for your campaign. Access high-quality data filters and instantly create custom lists based on demographics, location, credit, income, and more.',
+      about: "With PrimePrint’s mailing list service, you gain access to the most accurate, privacy-compliant data available. Whether you're targeting by income, ZIP code, age, or business type, our lists are optimized for effective direct mail marketing. Data is processed instantly and delivered in minutes.",
+      included: [
+        'Instant list building',
+        'Filters for location, income, age, and more',
+        'Up-to-date verified data',
+        'Full list ownership upon purchase',
+        'Best pricing on the web'
+      ]
     }
   ];
 
@@ -53,25 +95,113 @@ export function init() {
   if (service) {
     container.innerHTML = `
       <div>
-            <div class="service-header">
-                  <div class="service-box">
-                        <div class="service-icon">
-                              <i class='bxr ${service.icon}'></i>
-                        </div>
-                        <h1>${service.title}</h1>
-                        <p class="short">${service.description}</p>
-                        <div class="service__passport__button">
-                              <a href="#">
-                                    <button class="hero__button">Customize Now</button>
-                              </a>
-                              <a href="#">
-                                    <button class="hero__button bg-white">View Requirements</button>
-                              </a>
-                        </div>
-                  </div>
-                  <div class="service-image">
-                  </div>
+        <div class="service-header">
+          <div class="service-box">
+            <div class="service-icon">
+              <i class='bxr ${service.icon}'></i>
             </div>
+            <h1>${service.title}</h1>
+            <p class="short">${service.description}</p>
+            <div class="service__passport__button">
+              <a href="#">
+                <button class="hero__button">Customize Now</button>
+              </a>
+              ${
+                service.id === 'passport-photos'
+                  ? `<a href="passport-requirements.html">
+                        <button class="hero__button bg-white">View Requirements</button>
+                    </a>`
+                  : ''
+              }
+            </div>
+          </div>
+          <div class="service-image"></div>
+        </div>
+
+        <div class="tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="about">About</button>
+            <button class="tab-btn" data-tab="included">What's Included?</button>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane active" id="about">
+              <h2>About</h2>
+              <p>${service.about}</p>
+            </div>
+            <div class="tab-pane" id="included">
+              <h2>What's Included?</h2>
+              <ul>
+                ${service.included.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <section>
+          <div class="workss__container container">
+            <div class="workss__content">
+              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/w1.jpg" alt="work1"></div></a></div>
+              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/w2.jpg" alt="work2"></div></a></div>
+              <div class="work__items">
+                <a href="#"><div class="inner"><img src="../assets/images/w3.jpg" alt="work3"></div></a>
+                <a href="#"><div class="inner"><img src="../assets/images/w4.jpg" alt="work4"></div></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="more-services"></div>
+      </div>
+    `;
+
+    // Tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // More services
+    const moreContainer = document.querySelector('.more-services');
+    const otherServices = services.filter(s => s.id !== serviceId).slice(0, 3);
+
+    moreContainer.innerHTML = `
+      <div class="prime__title">
+            <div class="prime__text">
+                  <h2>More Services</h2>
+            </div>
+            <div class="prime__buttons">
+                  <a href="services.html">
+                        <button class="prime__button bg-white">Browse All Services</button>
+                  </a>
+            </div>
+      </div>
+      <br />
+      <br />
+      <div class="services__list__container">
+        ${otherServices.map(s => `
+          <div class="list__item">
+            <a href="service.html?id=${s.id}">
+              <div class="list__top">
+                <i class='bxr ${s.icon} bx-flip-vertical'></i>
+                <h3>${s.title}</h3>
+              </div>
+              <p class="list__text">
+                ${s.description.length > 80 ? s.description.substring(0, 80) + "..." : s.description}
+              </p>
+              <div class="list__more">
+                <p>Learn More</p>
+                <i class='bxr bxs-arrow-right-stroke'></i>
+              </div>
+            </a>
+          </div>
+        `).join('')}
       </div>
     `;
   } else {

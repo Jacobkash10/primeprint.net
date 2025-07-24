@@ -42,12 +42,11 @@ a {
   position: relative;
   cursor: pointer;
   padding: 20px 0px;
-  font-weight: '200';
   transition: background-color 0.3s;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 400;
   text-align: center;
-  /* max-width: min-content; */
+  text-transform: uppercase;
   color: #1e1e24;
 }
 
@@ -113,9 +112,10 @@ a {
 }
 
 .menu-column h4 {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 5px;
-  color: #333;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .menu-column a {
@@ -138,7 +138,7 @@ a {
 }
 
 .click-toggle h5 {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: #000;
   transition: transform 0.3s ease;
@@ -576,9 +576,9 @@ a {
 }
 
 .passport__left img {
-      width: 50%;
-      margin-top: 90px;
-      margin-left: 80px;
+      width: 49%;
+      margin-top: 80px;
+      margin-left: 110px;
 }
 
 .abs {
@@ -1443,11 +1443,11 @@ a {
 
       .passport__left {
             width: 80%;
-            height: 650px;
+            height: 700px;
       }
 
       .passport__left img {
-            width: 60%;
+            width: 45%;
       }
 
       .passport__right {
