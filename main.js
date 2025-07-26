@@ -15,6 +15,12 @@ async function loadHTML(id, file, script) {
   }
 }
 
+import('./scripts/search.js').then(module => {
+  if (module && typeof module.init === 'function') {
+    module.init();
+  }
+});
+
 import('./scripts/navBottom.js').then(module => {
   if (module && typeof module.init === 'function') {
     module.init();

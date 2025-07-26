@@ -604,9 +604,10 @@ a {
 }
 
 .passport__left img {
-      width: 49%;
+      width: 48.5%;
       margin-top: 80px;
       margin-left: 110px;
+      margin-bottom: 5px;
 }
 
 .abs {
