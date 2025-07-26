@@ -15,47 +15,25 @@ async function loadHTML(id, file, script) {
   }
 }
 
-import('./scripts/search.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/navBottom.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/services.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/our.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/filterByCategory.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/servicePage.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
-import('./scripts/serviceDetails.js').then(module => {
-  if (module && typeof module.init === 'function') {
-    module.init();
-  }
-});
-
 loadHTML("header", "sections/header.html", "header.js");
 loadHTML("footer", "sections/footer.html", "footer.js");
+
+const modulesToInit = [
+  'search.js',
+  'navBottom.js',
+  'services.js',
+  'our.js',
+  'filterByCategory.js',
+  'servicePage.js',
+  'serviceDetails.js'
+];
+
+modulesToInit.forEach(moduleName => {
+  import(`./scripts/${moduleName}`).then(module => {
+    if (module && typeof module.init === 'function') {
+      module.init();
+    }
+  }).catch(err => {
+    console.warn(`Erreur lors de l'import de ${moduleName}:`, err);
+  });
+});

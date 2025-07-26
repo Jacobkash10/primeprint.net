@@ -94,7 +94,7 @@ export function init() {
     {
       name: "Announcement Cards",
       category: "Stationery Products",
-      link: "phttps://www.primeprint.net/store/product-view.html/30-Announcement-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/30-Announcement-Cards"
     },
     {
       name: "Pearl Cards",
@@ -110,6 +110,10 @@ export function init() {
 
   const searchInput = document.getElementById("searchInput");
   const suggestions = document.getElementById("suggestions");
+
+  if (!searchInput || !suggestions || searchInput.dataset.listenerAdded === "true") return;
+
+  searchInput.dataset.listenerAdded = "true";
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase();
@@ -133,4 +137,5 @@ export function init() {
     });
   });
 }
+
 
