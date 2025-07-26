@@ -91,11 +91,11 @@
       font-size: 1.5rem;
       font-weight: 600;
       color: #333;
-      margin-bottom: 1px;
+      margin-bottom: 5px;
 }
 
 .list__text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #666;
 }
 
@@ -142,6 +142,29 @@
       height: 500px;
       border-radius: 30px;
       background-color: #f8ae1d;
+      position: relative;
+}
+
+.service-image .img-service1 {
+      width: 35%;
+      position: absolute;
+      bottom: 4px;
+      left: 30px;
+}
+
+.service-image .img-service2 {
+      width: 25%;
+      position: absolute;
+      bottom: 150px;
+      right: 120px;
+      z-index: 1;
+}
+
+.service-image .img-service3 {
+      width: 25%;
+      position: absolute;
+      bottom: 200px;
+      right: 0;
 }
 
 .service-icon i {
@@ -339,9 +362,26 @@
             flex-wrap: wrap;
             padding: 9%;
       }
+
+      .workss__content {
+            gap: 20px;
+      }
 }
 
 @media (max-width: 1100px) {
+      
+      .service__banner__text {
+            padding: 13% 10%;
+      }
+
+      .servicess h2 {
+            font-size: 2.6rem;
+      }
+
+      .servicess p {
+            font-size: 1.1rem;
+            max-width: 530px;
+      }
 
       .service-box h1 {
             font-size: 2.4rem;
@@ -358,16 +398,97 @@
 
       .tab-content {
             width: 80%;
+            height: 400px;
+      }
+
+      .workss__container {
+            margin-top: 40px;
+      }
+
+      .workss__content {
+            padding-bottom: 50px;
+      }
+
+}
+
+@media (max-width: 1000px) {
+
+      .service-image .img-service1 {
+            width: 35%;
+            bottom: 4px;
+            left: 30px;
+      }
+
+      .service-image .img-service2 {
+            width: 25%;
+            bottom: 150px;
+            right: 100px;
+      }
+
+      .service-image .img-service3 {
+            width: 25%;
+            position: absolute;
+            bottom: 200px;
+            right: 0;
+      }
+
+      .workss__content {
+            flex-wrap: wrap;
+            gap: 10px;
+      }
+
+}
+
+@media (max-width: 900px) {
+
+      .service-image .img-service2 {
+            width: 25%;
+            bottom: 150px;
+            right: 80px;
       }
 
 }
 
 @media (max-width: 800px) {
 
+      .service__banner__text {
+            padding: 14%;
+      }
+
+      .list__top i {
+            font-size: 2rem;
+      }
+
+      .list__top h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+      }
+
+      .list__text {
+            font-size: 1rem;
+      }
+
+      .list__more p {
+            font-size: .8rem;
+      }
+
+      .list__more i {
+            font-size: 1.4rem;
+            margin-top: 2px;
+      }
+
       .service-header {
             flex-direction: column;
             align-items: center;
             gap: 20px;
+      }
+
+      .service-box h1 {
+            font-size: 2rem;
+      }
+
+      .short {
+            font-size: 1rem;
       }
 
       .service-box {
@@ -379,9 +500,29 @@
             height: 300px;
       }
 
+      .service-image .img-service1 {
+            width: 20%;
+            bottom: 4px;
+            left: 30px;
+      }
+
+      .service-image .img-service2 {
+            width: 18%;
+            bottom: 10px;
+            right: 140px;
+      }
+
+      .service-image .img-service3 {
+            width: 18%;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+      }
+
       .tab-content {
             width: 90%;
             padding: 10px;
+            height: 300px;
       }
 
       .tab-content h2 {
@@ -396,9 +537,21 @@
             font-size: 1.1rem;
       }
 
+      .workss__container {
+            margin-top: 60px;
+      }
+
+      .workss__content {
+            gap: 5px;
+      }
+
 }
 
 @media (max-width: 700px) {
+
+      .service__banner__text {
+            padding: 20% 9%;
+      }
 
       .services__list__container {
             grid-template-columns: 1fr;
@@ -406,6 +559,37 @@
 
       .tab-content {
             width: 100%;
+      }
+
+      .tab-content h2 {
+            font-size: 2rem;
+      }
+
+      .tab-content p {
+            font-size: 1rem;
+      }
+
+      .tab-btn {
+            font-size: .9rem;
+      }
+
+      .service-image .img-service1 {
+            width: 30%;
+            bottom: 4px;
+            left: 30px;
+      }
+
+      .service-image .img-service2 {
+            width: 22%;
+            bottom: 10px;
+            right: 120px;
+      }
+
+      .service-image .img-service3 {
+            width: 22%;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
       }
 }
 

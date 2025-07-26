@@ -12,7 +12,8 @@ export function init() {
         'Custom layouts & typography',
         'Fast revisions & support',
         'Delivered in multiple formats'
-      ]
+      ],
+      link: 'https://www.primeprint.net/store/product-view.html/109-Design-Services',
     },
     {
       id: 'passport-photos',
@@ -26,7 +27,11 @@ export function init() {
         'Print-ready or digital JPG option',
         'Retouching',
         'Fast delivery available'
-      ]
+      ],
+      image1: '../assets/images/passport.png',
+      image2: '../assets/images/pass.png',
+      image3: '../assets/images/pass.png',
+      link: 'https://www.primeprint.net/contact/contact-form.html'
     },
     {
       id: 'eddm',
@@ -40,7 +45,8 @@ export function init() {
         'Full-service print + mail handling',
         'Templates & online design tools',
         'Delivery to local post offices included'
-      ]
+      ],
+      link: 'https://www.primeprint.net/store/product-view.html/48-Every-Door-Direct-Mail'
     },
     {
       id: 'custom-printing',
@@ -54,7 +60,8 @@ export function init() {
         'Same-day turnaround available',
         'Die cutting, binding & finishing',
         'Quality checks for consistent color & resolution'
-      ]
+      ],
+      link: 'https://www.primeprint.net/contact/contact-form.html'
     },
     {
       id: 'mailing-services',
@@ -68,7 +75,8 @@ export function init() {
         'Fast turnaround (2–5 business days)',
         'No shipping to mail house required',
         'Targeted mailing lists available'
-      ]
+      ],
+      link: 'https://www.primeprint.net/contact/contact-form.html'
     },
     {
       id: 'mailing-lists',
@@ -82,7 +90,8 @@ export function init() {
         'Up-to-date verified data',
         'Full list ownership upon purchase',
         'Best pricing on the web'
-      ]
+      ],
+      link: 'https://www.primeprint.net/contact/contact-form.html'
     }
   ];
 
@@ -103,7 +112,7 @@ export function init() {
             <h1>${service.title}</h1>
             <p class="short">${service.description}</p>
             <div class="service__passport__button">
-              <a href="#">
+              <a href="${service.link}">
                 <button class="hero__button">Customize Now</button>
               </a>
               ${
@@ -115,7 +124,13 @@ export function init() {
               }
             </div>
           </div>
-          <div class="service-image"></div>
+          ${service.image1 ? `
+            <div class="service-image">
+              <img src="${service.image1}" alt="${service.title}" class="img-service1" />
+              <img src="${service.image2}" alt="${service.title}" class="img-service2" />
+              <img src="${service.image3}" alt="${service.title}" class="img-service3" />
+            </div>
+          ` : ''}
         </div>
 
         <div class="tabs">
