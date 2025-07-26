@@ -2,10 +2,12 @@ async function loadHTML(id, file, script) {
   try {
     const res = await fetch(file);
     const html = await res.text();
-    document.getElementById(id).innerHTML = html;
+    const container = document.getElementById(id);
+    container.innerHTML = html;
 
+    // Important : on attend le DOM avant d’importer le JS lié
     if (script) {
-      const module = await import(`./scripts/${script}`);
+      const module = await import(`./scripts/${script}?v=${Date.now()}`); // <== force reload via cache busting
       if (module && typeof module.init === 'function') {
         module.init();
       }
@@ -15,11 +17,12 @@ async function loadHTML(id, file, script) {
   }
 }
 
-loadHTML("header", "sections/header.html", "header.js");
+// Chargement dynamique du header avec son script à chaque fois
+loadHTML("header", "sections/header.html", "search.js"); // search.js inclus ici car dépend du header
 loadHTML("footer", "sections/footer.html", "footer.js");
 
+// Les autres modules JS globaux
 const modulesToInit = [
-  'search.js',
   'navBottom.js',
   'services.js',
   'our.js',
@@ -29,7 +32,7 @@ const modulesToInit = [
 ];
 
 modulesToInit.forEach(moduleName => {
-  import(`./scripts/${moduleName}`).then(module => {
+  import(`./scripts/${moduleName}?v=${Date.now()}`).then(module => {
     if (module && typeof module.init === 'function') {
       module.init();
     }
