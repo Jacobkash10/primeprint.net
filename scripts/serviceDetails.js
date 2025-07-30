@@ -31,7 +31,7 @@ export function init() {
       image1: '../assets/images/passport.png',
       image2: '../assets/images/pass.png',
       image3: '../assets/images/pass.png',
-      link: 'https://www.primeprint.net/contact/contact-form.html'
+      link: 'https://www.primeprint.net/store/product-view.html/780/90343'
     },
     {
       id: 'eddm',
@@ -184,7 +184,7 @@ export function init() {
 
     // More services
     const moreContainer = document.querySelector('.more-services');
-    const otherServices = services.filter(s => s.id !== serviceId).slice(0, 3);
+    const otherServices = services.filter(s => s.id !== serviceId).slice(0, 4);
 
     moreContainer.innerHTML = `
       <div class="prime__title">

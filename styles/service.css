@@ -60,15 +60,15 @@
 
 .services__list__container {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
 }
 
 .list__item {
       background-color: #ffffff;
       border: #f9f9f9 solid 1px;
-      border-radius: 30px;
-      padding: 40px;
+      border-radius: 20px;
+      padding: 30px;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -88,14 +88,14 @@
 }
 
 .list__top h3 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: #333;
       margin-bottom: 5px;
 }
 
 .list__text {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #666;
 }
 

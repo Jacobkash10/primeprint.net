@@ -18,10 +18,10 @@ async function loadHTML(id, file, script) {
 
 loadHTML("header", "sections/header.html", "header.js");
 loadHTML("header", "sections/header.html", "search.js"); 
+loadHTML("header", "sections/header.html", "navBottom.js"); 
 loadHTML("footer", "sections/footer.html", "footer.js");
 
 const modulesToInit = [
-  'navBottom.js',
   'services.js',
   'our.js',
   'filterByCategory.js',

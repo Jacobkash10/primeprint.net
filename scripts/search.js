@@ -1,141 +1,136 @@
-// export function init() {
-// const products = [
-//   {
-//     name: "Business Card Magnets",
-//     category: "Marketing Materials",
-//     image: "./images/magnet.jpg"
-//   },
-//   {
-//     name: "Business Cards",
-//     category: "Marketing Materials",
-//     image: "./images/business-cards.jpg"
-//   },
-//   {
-//     name: "Circle Business Cards",
-//     category: "Marketing Materials > Special Shapes",
-//     image: "./images/circle-cards.jpg"
-//   },
-//   {
-//     name: "Acrylic Boards",
-//     category: "Signs & Banners > Rigid Signs",
-//     image: "./images/acrylic.jpg"
-//   },
-//   {
-//     name: "Folded Business Cards",
-//     category: "Marketing Materials",
-//     image: "./images/folded.jpg"
-//   },
-//   {
-//     name: "Business Card Templates: Popular",
-//     category: "Design Gallery",
-//     image: "./images/templates.jpg"
-//   }
-// ];
-
-// const searchInput = document.getElementById("searchInput");
-// const suggestions = document.getElementById("suggestions");
-
-// searchInput.addEventListener("input", () => {
-//   const query = searchInput.value.toLowerCase();
-//   suggestions.innerHTML = "";
-
-//   if (query.length === 0) return;
-
-//   const filtered = products.filter(product =>
-//     product.name.toLowerCase().includes(query)
-//   );
-
-//   if (filtered.length === 0) {
-//     suggestions.innerHTML = `<li>No results found</li>`;
-//     return;
-//   }
-
-//   filtered.forEach(product => {
-//     const li = document.createElement("li");
-//     li.innerHTML = `
-//       <img src="${product.image}" alt="${product.name}" />
-//       <div>
-//         <strong>${product.name}</strong><br/>
-//         <small>${product.category}</small>
-//       </div>
-//     `;
-//     suggestions.appendChild(li);
-//   });
-// });
-// }
-
 export function init() {
   const products = [
     {
       name: "Brown Kraft Cards",
       category: "Business Cards Products",
-      link: "https://www.primeprint.net/store/product-view.html/105-Brown-Kraft-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/105-Brown-Kraft-Cards",
+      image: "../assets/images/cat1.png"
     },
     {
       name: "Business Cards",
       category: "Business Cards Products",
-      link: "https://www.primeprint.net/store/product-view.html/33-Business-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/33-Business-Cards",
+      image: "../assets/images/cat2.png"
     },
     {
       name: "EDGE Cards",
       category: "Business Cards Products",
-      link: "https://www.primeprint.net/store/product-view.html/101-Edge-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/101-Edge-Cards",
+      image: "../assets/images/cat3.png"
     },
     {
       name: "Postcards",
       category: "Marketing Products",
-      link: "https://www.primeprint.net/store/product-view.html/74-Postcards"
+      link: "https://www.primeprint.net/store/product-view.html/74-Postcards",
+      image: "../assets/images/cat4.png"
     },
     {
       name: "Booklets",
       category: "Marketing Products",
-      link: "https://www.primeprint.net/store/product-view.html/97-Booklets"
+      link: "https://www.primeprint.net/store/product-view.html/97-Booklets",
+      image: "../assets/images/cat1.png"
     },
     {
       name: "Announcement Cards",
       category: "Stationery Products",
-      link: "https://www.primeprint.net/store/product-view.html/30-Announcement-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/30-Announcement-Cards",
+      image: "../assets/images/cat2.png"
     },
     {
       name: "Pearl Cards",
       category: "Stationery Products",
-      link: "https://www.primeprint.net/store/product-view.html/72-Pearl-Cards"
+      link: "https://www.primeprint.net/store/product-view.html/72-Pearl-Cards",
+      image: "../assets/images/cat3.png"
     },
     {
       name: "Event Tents",
       category: "Displays",
-      link: "https://www.primeprint.net/store/product-view.html/293-Event-Tents"
-    },
+      link: "https://www.primeprint.net/store/product-view.html/293-Event-Tents",
+      image: "../assets/images/cat4.png"
+    }
   ];
 
-  const searchInput = document.getElementById("searchInput");
-  const suggestions = document.getElementById("suggestions");
+  const categories = [
+    { name: "Business Cards Products", link: "https://www.primeprint.net/store/category/business-cards" },
+    { name: "Marketing Products", link: "https://www.primeprint.net/store/category/marketing" },
+    { name: "Stationery Products", link: "https://www.primeprint.net/store/category/stationery" },
+    { name: "Displays", link: "https://www.primeprint.net/store/category/displays" },
+    { name: "Specialty Products", link: "https://www.primeprint.net/store/category/specialty" },
+    { name: "Promo Products", link: "https://www.primeprint.net/store/category/promo" },
+    { name: "Services", link: "https://www.primeprint.net/services" }
+  ];
 
-  if (!searchInput || !suggestions || searchInput.dataset.listenerAdded === "true") return;
+  // ✅ Gère toutes les barres de recherche (desktop et mobile)
+  document.querySelectorAll(".search-wrapper, .search-wrapper-responsive").forEach(wrapper => {
+    const input = wrapper.querySelector("[data-search-input]");
+    const suggestionList = wrapper.querySelector("[data-suggestions]");
 
-  searchInput.dataset.listenerAdded = "true";
+    if (!input || !suggestionList) return;
 
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    suggestions.innerHTML = "";
+    input.addEventListener("input", () => {
+      const query = input.value.toLowerCase().trim();
+      suggestionList.innerHTML = "";
 
-    if (query.length === 0) return;
+      if (!query) return;
 
-    const filtered = products.filter(product =>
-      product.name.toLowerCase().includes(query)
-    );
+      const filteredProducts = products.filter(p => p.name.toLowerCase().includes(query));
+      const filteredCategories = categories.filter(c => c.name.toLowerCase().includes(query));
 
-    if (filtered.length === 0) {
-      suggestions.innerHTML = `<li>No results found</li>`;
-      return;
-    }
+      if (filteredProducts.length === 0 && filteredCategories.length === 0) {
+        suggestionList.innerHTML = `<li>No results found</li>`;
+        return;
+      }
 
-    filtered.forEach(product => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${product.link}">${product.name}</a>`;
-      suggestions.appendChild(li);
+      if (filteredCategories.length > 0) {
+        const title = document.createElement("li");
+        title.innerHTML = "<strong>Categories</strong>";
+        suggestionList.appendChild(title);
+
+        filteredCategories.forEach(c => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="${c.link}">${c.name}</a>`;
+          suggestionList.appendChild(li);
+        });
+      }
+
+      if (filteredProducts.length > 0) {
+        const title = document.createElement("li");
+        title.innerHTML = "<strong>Products</strong>";
+        title.style.paddingTop = "0.5rem";
+        suggestionList.appendChild(title);
+
+        filteredProducts.forEach(p => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <a href="${p.link}" class="suggestion-item">
+              <img src="${p.image}" alt="${p.name}" />
+              <span>${p.name}</span>
+            </a>
+          `;
+          suggestionList.appendChild(li);
+        });
+      }
     });
   });
+
+  // ✅ Mobile only: ouvrir/fermer la barre de recherche
+  const openBtn = document.querySelector("[data-open-search]");
+  const closeBtn = document.querySelector("[data-close-search]");
+  const mobileContainer = document.querySelector(".search-wrapper-responsive .search-bar-container");
+
+  if (openBtn && closeBtn && mobileContainer) {
+    openBtn.addEventListener("click", () => {
+      mobileContainer.classList.add("show");
+      const input = mobileContainer.querySelector("[data-search-input]");
+      if (input) input.focus();
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileContainer.classList.remove("show");
+      const input = mobileContainer.querySelector("[data-search-input]");
+      const suggestionList = mobileContainer.querySelector("[data-suggestions]");
+      if (input) input.value = "";
+      if (suggestionList) suggestionList.innerHTML = "";
+    });
+  }
 }
-
-

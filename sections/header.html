@@ -13,15 +13,30 @@
                   <img src="../assets/images/Logo.png" alt="logo">
             </a>
       </div>
+
       <div class="search-wrapper">
-            <div class="search-bar">
-                  <input type="text" placeholder="Search ..." id="searchInput" autocomplete="off" />
-                  <button class="search-button">
-                        <i class='bx bx-search'></i>
-                  </button>
-            </div>
-            <ul class="suggestions-list" id="suggestions"></ul>
+      <div class="search-bar">
+      <input type="text" placeholder="Search ..." data-search-input autocomplete="off" />
+      <button class="search-button">
+            <i class='bx bx-search'></i>
+      </button>
       </div>
+      <ul class="suggestions-list" data-suggestions></ul>
+      </div>
+
+
+      <div class="search-wrapper-responsive">
+      <button data-open-search class="i-search"><i class='bx bx-search'></i></button>
+
+      <div class="search-bar-container">
+      <div class="search-bar">
+            <input type="text" placeholder="Search ..." data-search-input autocomplete="off" />
+            <button data-close-search class="close-search"><i class='bx bx-x'></i></button>
+      </div>
+      <ul class="suggestions-list" data-suggestions></ul>
+      </div>
+      </div>
+
     </div>
     <div class="nav-center">
       <div class="close-menu">
@@ -36,9 +51,64 @@
             </div>
             <div>
                   <a href="/signin" class="nav-icon">
-                        <i class='bxr  bxs-user-hexagon'  ></i> 
+                        <i class='bxr  bx-user'  ></i> 
                         <p>Sign In</p>
                   </a>
+            </div>
+      </div>
+      <div class="responsive-nav-bottom">
+            <div class="respo-nav-menu">
+                  <ul>
+                        <li class="click-toggles" data-menu="majestic">
+                              <h5>All Products</h5>
+                              <i class='bxr  bx-chevron-down'  ></i>  
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Business Cards
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Marketing Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Stationery Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Signs & Posters
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Displays
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Specialty Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Promo Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="services.html">
+                                    Services
+                              </a>
+                        </li>
+                  </ul>
+            </div>
+
+            <div class="respo-submenu">
+                  <div class="respo-submenu-content" id="respo-submenu-content">
+                  </div>
             </div>
       </div>
     </div>
@@ -56,6 +126,62 @@
       </div>
     </div>
   </nav>
+      <section class="nav-bottom">
+
+            <div class="nav-menu">
+                  <ul>
+                        <li class="click-toggle" data-menu="majestic">
+                              <h5>All Products</h5>
+                              <i class='bxr  bx-chevron-down'  ></i>  
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Business Cards
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Marketing Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Stationery Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Signs & Posters
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Displays
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Specialty Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="categories.html">
+                                    Promo Products
+                              </a>
+                        </li>
+                        <li>
+                              <a href="services.html">
+                                    Services
+                              </a>
+                        </li>
+                  </ul>
+            </div>
+
+            <div class="submenu">
+                  <div class="submenu-content" id="submenu-content">
+                  </div>
+            </div>
+      </section>
 </header>
 
 
