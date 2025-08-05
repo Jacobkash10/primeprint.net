@@ -12,13 +12,13 @@ export function init() {
     console.log("Slider ready");
 
     let index = 0;
-    const GAP = 25;
+    const GAP = 10;
 
     const getItemWidth = () =>
       slider.querySelector(".our__item").getBoundingClientRect().width + GAP;
 
     const goTo = (i) => {
-      const maxIndex = slider.children.length - 2;
+      const maxIndex = slider.children.length - 1;
       index = Math.max(0, Math.min(i, maxIndex));
       const offset = index * getItemWidth();
       slider.style.transform = `translateX(-${offset}px)`;
@@ -27,19 +27,16 @@ export function init() {
     };
 
     prevBtn.addEventListener("click", () => {
-      // clearInterval(autoplayInterval);
       goTo(index - 1);
     });
 
     nextBtn.addEventListener("click", () => {
-      // clearInterval(autoplayInterval);
       goTo(index + 1);
     });
 
     window.addEventListener("resize", () => goTo(index));
     goTo(0);
 
-    // Autoplay 
     let autoplayInterval = setInterval(() => {
       const maxIndex = slider.children.length - 2;
       if (index < maxIndex) {
@@ -47,6 +44,6 @@ export function init() {
       } else {
         goTo(0);
       }
-    }, 9000);
+    }, 7000);
   }, 50);
 }

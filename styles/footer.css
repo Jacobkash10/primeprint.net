@@ -253,7 +253,7 @@
       .copy__text {
             display: flex;
             flex-wrap: wrap;
-            font-size: .9rem;
+            font-size: .8rem;
       }
 }
 
@@ -266,4 +266,51 @@
             gap: 10px;
       }
 
+}
+
+@media (max-width: 500px) {
+
+      .newsletter {
+            width: 100%;
+            padding: 20px;
+      }
+
+      .copy__icons .img1 {
+            width: 40px;
+      }
+
+      .copy__icons .img2 {
+            width: 40px;
+      }
+
+      .copy__icons .img3 {
+            width: 80px;
+      }
+
+      .copy__icons .img4 {
+            width: 40px;
+      }
+
+      .copy__icons .img5 {
+            width: 55px;
+      }
+}
+
+@media (max-width: 400px) {
+
+      .links h5 {
+            font-size: .9rem;
+      }
+
+      .links ul li a {
+            font-size: .8rem;
+      }
+
+      .subs h5 {
+            font-size: 1.1rem;
+      }
+
+      .subs .input {
+            width: 100%;
+      }
 }

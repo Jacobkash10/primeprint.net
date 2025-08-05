@@ -2,45 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Passport Photo Requirements | PrimePrint</title>
-  <link rel="stylesheet" href="/styles/main.css" />
-  <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    header, section, footer { padding: 2rem; }
-    h1, h2, h3 { color: #012f6b; }
-    .cta-btns a { margin-right: 1rem; padding: 0.5rem 1rem; background: #012f6b; color: white; text-decoration: none; border-radius: 5px; }
-    .spec-table, .format-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-    .spec-table th, .spec-table td, .format-table td { border: 1px solid #ccc; padding: 0.5rem; }
-    .icon-grid { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .icon-grid div { flex: 1 1 200px; background: #f9f9f9; padding: 1rem; border-radius: 8px; text-align: center; }
-    ul { padding-left: 1.5rem; }
-    footer { background: #012f6b; color: white; text-align: center; padding: 1rem; }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/passport.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <title>Passport Photo Requirements | PrimePrint</title>
 </head>
 <body>
 
-<header>
-  <h1>Passport Photo Requirements</h1>
-  <p>Whether for U.S. or international travel, we provide passport photos ready for both printed and online submission.</p>
-</header>
+  <div id="header"></div>
 
-<section>
-  <h2>U.S. Passport Photo Specifications</h2>
-  <table class="spec-table">
-    <tr><td>📏 Size</td><td>2 x 2 inches (51 x 51 mm)</td></tr>
-    <tr><td>🧑 Head Size</td><td>Between 1 – 1.4 inches (25–35 mm) chin to top of head</td></tr>
-    <tr><td>🎨 Background</td><td>Solid white or off-white</td></tr>
-    <tr><td>📷 Quality</td><td>High resolution, not blurry or pixelated</td></tr>
-    <tr><td>👕 Clothing</td><td>No uniforms, avoid white tops</td></tr>
-    <tr><td>👓 Glasses</td><td>Not allowed (since Nov 2016)</td></tr>
-    <tr><td>😐 Expression</td><td>Neutral face, both eyes open</td></tr>
-    <tr><td>💡 Lighting</td><td>No shadows, face evenly lit</td></tr>
-    <tr><td>🛑 Headgear</td><td>Only allowed for religious/medical reasons</td></tr>
-  </table>
-</section>
+  <header class="pass__header container">
+    <h1>Passport Photo Requirements</h1>
+    <p>Whether for U.S. or international travel, we provide passport photos ready for both printed and online submission.</p>
+  </header>
 
-<section>
+  <section class="specification container">
+    <h2>U.S. Passport Photo Specifications</h2>
+    <table class="spec-table">
+      <tr><td>📏 Size</td><td>2 x 2 inches (51 x 51 mm)</td></tr>
+      <tr><td>🧑 Head Size</td><td>Between 1 – 1.4 inches (25–35 mm) chin to top of head</td></tr>
+      <tr><td>🎨 Background</td><td>Solid white or off-white</td></tr>
+      <tr><td>📷 Quality</td><td>High resolution, not blurry or pixelated</td></tr>
+      <tr><td>👕 Clothing</td><td>No uniforms, avoid white tops</td></tr>
+      <tr><td>👓 Glasses</td><td>Not allowed (since Nov 2016)</td></tr>
+      <tr><td>😐 Expression</td><td>Neutral face, both eyes open</td></tr>
+      <tr><td>💡 Lighting</td><td>No shadows, face evenly lit</td></tr>
+      <tr><td>🛑 Headgear</td><td>Only allowed for religious/medical reasons</td></tr>
+    </table>
+  </section>
+
+<section class="printed container">
   <h2>Printed vs Digital Format</h2>
   <table class="format-table">
     <tr><td><strong>Printed</strong></td><td><strong>Digital Format</strong></td></tr>
@@ -51,7 +45,7 @@
   </table>
 </section>
 
-<section>
+<section class="what container">
   <h2>What’s Included with Every Passport Photo Order</h2>
   <ul>
     <li>✅ Government-compliant sizing</li>
@@ -62,7 +56,7 @@
   </ul>
 </section>
 
-<section>
+<section class="order container">
   <h2>How to Order</h2>
   <ol>
     <li>Choose Format: Printed or Digital or both</li>
@@ -70,14 +64,41 @@
     <li>Upload Your Photo</li>
     <li>Checkout Securely</li>
   </ol>
-  <div class="cta-btns">
-    <a href="/order/print">Customize Now</a>
-    <a href="https://travel.state.gov/content/travel/en/passports/how-apply/photos.html">More Info on Travel.Gov</a>
+  <div class="order__buttons">
+    <a href="https://www.primeprint.net/store/product-view.html/780/90343">
+      <button class="hero__button">Customize now</button>
+    </a>
+    <a href="https://travel.state.gov/content/travel/en/passports/how-apply/photos.html">
+      <button class="hero__button bg-white">More info on Travel.Gov</button>
+    </a>
   </div>
 </section>
 
-<footer>
-</footer>
+<section class="bottom__footer">
+            <div class="container">
+                  <div class="footer__top">
+                        <div class="footer__top__text">
+                              <h2>Crafted with Care. Delivered with Precision.</h2>
+                              <div class="footer__buttons">
+                                    <a href="#">
+                                          <button class="footer__button">Customize now</button>
+                                    </a>
+                                    <a href="services.html">
+                                          <button class="footer__button bg-white">Browse all services</button>
+                                    </a>
+                              </div>
+                        </div>
+                        <div class="footer__img">
+                              <img src="../assets/images/foot1.png" alt="foot1" class="img1">
+                              <img src="../assets/images/foot2.png" alt="foot2" class="img2">
+                        </div>
+                  </div>
+            </div>
+      </section>
+
+      <div id="footer"></div>
+
+      <script src="main.js"></script>
 
 </body>
 </html>

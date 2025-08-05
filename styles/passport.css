@@ -1,0 +1,191 @@
+.pass__header {
+      margin-top: 50px;
+}
+
+.pass__header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 20px;
+}
+
+.pass__header p {
+      font-size: 1.1rem;
+      color: #84848f;
+      max-width: 800px;
+      margin-bottom: 40px;
+}
+
+.specification h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 40px;
+}
+
+.printed h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #000;
+      margin: 40px 0;
+}
+
+.what h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #000;
+      margin: 40px 0;
+}
+
+.what ul {
+      list-style-type: disc;
+      padding-left: 20px;
+}
+
+.what ul li {
+      font-size: 1rem;
+      margin-left: 20px;
+      margin-bottom: 5px;
+}
+
+.order h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #000;
+      margin: 40px 0;
+}
+
+.order {
+      margin-bottom: 100px;
+}
+
+.order ol {
+      padding-left: 20px;
+}
+
+.order ol li {
+      font-size: 1rem;
+      margin-left: 20px;
+      margin-bottom: 5px;
+}
+
+.order__buttons {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+}
+
+.order__buttons a button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+}
+
+.order__buttons a .bg-white {
+      background-color: #ffffff;
+      color: #000;
+      border: #e7e7f2 1px solid;
+      transition: background-color 0.3s ease;
+}
+
+.order__buttons a button:hover {
+      background-color: #a4a4e2;
+      color: #ffffff;
+}
+
+.spec-table, .format-table { 
+      width: 100%; 
+      border-collapse: collapse; 
+      margin-top: 1rem; 
+}
+
+.spec-table th, .spec-table td, .format-table td { 
+      border: 1px solid #ccc; 
+      padding: 1rem; 
+      font-size: 1rem;
+}
+
+.icon-grid { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 1rem; 
+}
+
+.icon-grid div { 
+      flex: 1 1 200px; 
+      background: #f9f9f9; 
+      padding: 1rem; 
+      border-radius: 8px; 
+      text-align: center; 
+}
+
+@media (max-width: 500px) {
+
+      .pass__header h1 {
+            font-size: 1.8rem;
+      }
+
+      .pass__header p {
+            font-size: .9rem;
+            max-width: fit-content;
+      }
+
+      .specification h2 {
+            font-size: 1.2rem;
+      }
+
+      .printed h2 {
+            font-size: 1.2rem;
+      }
+
+      .what h2 {
+            font-size: 1.2rem;
+      }
+
+      .what ul li {
+            font-size: .9rem;
+      }
+
+      .order h2 {
+            font-size: 1.2rem;
+      }
+
+      .order ol li {
+            font-size: .9rem;
+      }
+
+      .order__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: center;
+            gap: 10px;
+      }
+
+      .order__buttons a button {
+            padding: 13px 25px;
+            font-size: .7rem;
+      }
+
+      .spec-table th, .spec-table td, .format-table td { 
+            font-size: .9rem;
+      }
+
+}
+
+@media (max-width: 400px) {
+
+      .order__buttons a button {
+            padding: 10px 20px;
+            font-size: .7rem;
+      }
+}
+    

@@ -475,7 +475,7 @@ a {
 .pass__item {
       border: #dadaf6 1px solid;
       border-radius: 20px;
-      padding: 30px 30px;
+      padding: 30px;
       display: flex;
       align-items: start;
       gap: 20px;
@@ -485,7 +485,6 @@ a {
 }
 
 .pass__item__number {
-      background-color: #e7e7f2;
       border-radius: 50%;
       width: 40px;
       height: 40px;
@@ -495,6 +494,10 @@ a {
       justify-content: center;
       padding: 0 15px;
 }
+
+.color1 { background-color: #e7e7f2; }
+.color2 { background-color: #d1f2eb; }
+.color3 { background-color: #fdebd0; }
 
 .pass__item__details h3 {
       font-size: 1.5rem;
@@ -662,6 +665,31 @@ a {
       color: #fff;
 }
 
+.prime__services__center {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 35px;
+      width: 100%;
+      margin-top: 35px;
+}
+
+.prime__services__center .prime__item {
+      width: 50%;
+      height: 480px;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+}
+
+.prime__services__center .prime__item a img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+      border-radius: 30px;
+      transition: transform 0.3s ease;
+}
+
 .prime__services__bottom {
       display: flex;
       justify-content: space-between;
@@ -713,7 +741,7 @@ a {
   position: relative;
   overflow: hidden;
   margin-top: 40px;
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
 .our__content {
@@ -1402,6 +1430,11 @@ a {
             gap: 15px;
       }
 
+      .prime__services__center {
+            gap: 15px;
+            margin-top: 15px;
+      }
+
       .prime__services__bottom {
             gap: 15px;
             margin-top: 15px;
@@ -1411,8 +1444,12 @@ a {
             height: 400px;
       }
 
+      .prime__services__center .prime__item {
+            height: 300px;
+      }
+
       .prime__services__bottom .prime__item {
-            height: 250px;
+            height: 200px;
       }
 
       .prime__item__price {
@@ -1486,6 +1523,10 @@ a {
 
       .hero2 {
             width: 40%;
+      }
+
+      .passport__left img {
+            width: 50%;
       }
 
       .prime__text h2 {
@@ -1669,11 +1710,21 @@ a {
             font-size: .9rem;
       }
 
+      .passport__left img {
+            width: 44%;
+      }
+
       .passport__right {
             height: 400px;
+            margin-top: 30px;
       }
 
       .prime__services__top {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__center {
             flex-direction: column;
             align-items: start;
       }
@@ -1684,6 +1735,10 @@ a {
       }
 
       .prime__services__top .prime__item {
+            width: 100%;
+      }
+
+      .prime__services__center .prime__item {
             width: 100%;
       }
 
@@ -1753,6 +1808,13 @@ a {
             line-height: 2.4rem;
       }
 
+      .hero1 .hero__buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+      }
+
       .hero1 a button {
             padding: 13px 25px;
             border-radius: 4rem;
@@ -1776,6 +1838,14 @@ a {
             font-size: .8rem;
       }
 
+      .comment__author h3 {
+            font-size: 1rem;
+      }
+
+      .comment__author span {
+            font-size: .9rem;
+      }
+
       .passport__text h2 {
             font-size: 2.5rem;
             line-height: 2.4rem;
@@ -1793,11 +1863,12 @@ a {
       }
 
       .passport__left img {
-            width: 60%;
+            width: 52%;
       }
 
       .passport__right {
             width: 90%;
+            margin-top: 30px;
       }
 
       .pass__item__details h3 {
@@ -1966,6 +2037,21 @@ a {
             margin: 20px 0;
       }
 
+      .passport__text h2 {
+            font-size: 2.2rem;
+            line-height: 2.4rem;
+            max-width: fit-content;
+      }
+
+      .passport__left img {
+            width: 65%;
+      }
+
+      .passport__right {
+            width: 95%;
+            margin-top: 10px;
+      }
+
       .services {
             padding: 60px 0;
             background-color: #f6f7fa;
@@ -1994,6 +2080,13 @@ a {
             padding: 10px 20px;
             font-size: .7rem;
       }
+
+      .footer__top__text a button {
+            background-color: #fff;
+            padding: 13px 25px;
+            border-radius: 4rem;
+            font-size: .7rem;
+      }
 }
 
 @media (max-width: 400px) {
@@ -2010,5 +2103,81 @@ a {
 
       .hero__texts h1 {
             font-size: 2rem;
+      }
+}
+
+@media (max-width: 400px) {
+
+      .passport__left {
+            background-color: #f8ae1d;
+            height: 300px;
+      }
+
+      .passport__left img {
+            width: 45%;
+      }
+
+      .passport__right {
+            height: 250px;
+            margin-top: 25px;
+      }
+
+      .passport__button {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+      }
+
+      .passport__button a button {
+            padding: 13px 20px;
+            border-radius: 4rem;
+            font-size: .8rem;
+      }
+
+      .prime__text h2 {
+            font-size: 2.2rem;
+      }
+
+      .prime__buttons {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+      }
+
+      .our h2 {
+            font-size: 2.2rem;
+      }
+
+      .our__buttons {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+      }
+
+      .hello__buttons {
+            flex-wrap: wrap;
+      }
+
+      .post__text h2 {
+            font-size: 2.2rem;
+      }
+
+      .work__text h2 {
+            font-size: 2.2rem;
+      }
+
+      .footer__top__text h2 {
+            font-size: 2.2rem;
+            max-width: fit-content;
+      }
+
+      .footer__buttons {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+      }
+
+      .pass__item {
+            padding: 10px;
+      }
+
+      .pass__item__details h3 {
+            font-size: .9rem;
       }
 }
