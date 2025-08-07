@@ -9,19 +9,21 @@ export function init() {
       return;
     }
 
-    console.log("Slider ready");
-
     let index = 0;
-    const GAP = 10;
+    const GAP = 20;
+    const items = slider.querySelectorAll(".our__item");
 
     const getItemWidth = () =>
-      slider.querySelector(".our__item").getBoundingClientRect().width + GAP;
+      items[0].getBoundingClientRect().width + GAP;
 
     const goTo = (i) => {
-      const maxIndex = slider.children.length - 1;
+      const totalItems = items.length;
+      const maxIndex = totalItems - 1;
+
       index = Math.max(0, Math.min(i, maxIndex));
       const offset = index * getItemWidth();
       slider.style.transform = `translateX(-${offset}px)`;
+
       prevBtn.disabled = index === 0;
       nextBtn.disabled = index === maxIndex;
     };
@@ -38,7 +40,8 @@ export function init() {
     goTo(0);
 
     let autoplayInterval = setInterval(() => {
-      const maxIndex = slider.children.length - 2;
+      const maxIndex = items.length - 1;
+
       if (index < maxIndex) {
         goTo(index + 1);
       } else {
@@ -47,3 +50,5 @@ export function init() {
     }, 7000);
   }, 50);
 }
+
+

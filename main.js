@@ -22,6 +22,7 @@ loadHTML("header", "sections/header.html", "navBottom.js");
 loadHTML("footer", "sections/footer.html", "footer.js");
 
 const modulesToInit = [
+  'hero.js',
   'services.js',
   'our.js',
   'filterByCategory.js',

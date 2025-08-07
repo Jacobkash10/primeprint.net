@@ -171,6 +171,64 @@ a {
   display: none;
 }
 
+.sliders__hero {
+  position: relative;
+  overflow: hidden;
+  display: none;
+  width: 50%;
+}
+
+.hero__items {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.hero__item {
+  flex: 0 0 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hero__item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.sliders-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #000;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 15px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliders-btn:hover {
+      background-color: #a4a4e2;
+      transition: transform 0.4s ease;
+}
+
+.sliders-btn.prev { left: 0px;  }
+.sliders-btn.next { right: 0px; }
+
+.sliders-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 .badges {
       background-color: #a4a4e2;
 }
@@ -292,7 +350,7 @@ a {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 30px;
+      gap: 20px;
       width: 100%;
       transition: transform 0.4s ease;
       padding: 0px 30px;
@@ -496,7 +554,7 @@ a {
 }
 
 .color1 { background-color: #e7e7f2; }
-.color2 { background-color: #d1f2eb; }
+.color2 { background-color: #f8ae1d; }
 .color3 { background-color: #fdebd0; }
 
 .pass__item__details h3 {
@@ -750,11 +808,11 @@ a {
       gap: 25px;
       transition: transform 0.4s ease;
       will-change: transform;
+      width: 100%;
 }
 
 .our__item {
-  min-width: 360px;
-  max-width: 320px;
+  width: 380px;
   background-color: #fff;
   border-radius: 20px;
   padding: 30px;
@@ -1319,6 +1377,11 @@ a {
             width: 100%;
       }
 
+      .slider-btn {
+            font-size: 1.3rem;
+            padding: 12px;
+      }
+
       .comments {
             flex-wrap: wrap;
       }
@@ -1375,6 +1438,11 @@ a {
 
       .our {
             padding: 130px 20px 500px 20px;
+      }
+
+      .slide-btn {
+            font-size: 1.3rem;
+            padding: 12px;
       }
 
       .hello__content .img1 {
@@ -1525,6 +1593,10 @@ a {
             width: 40%;
       }
 
+      .sliders__hero {
+            display: block;
+      }
+
       .passport__left img {
             width: 50%;
       }
@@ -1535,6 +1607,10 @@ a {
 
       .our h2 {
             font-size: 3rem;
+      }
+
+      .our__content {
+            gap: 18px;
       }
 
       .post__text h2 {
@@ -1628,6 +1704,14 @@ a {
             height: 300px;
       }
 
+      .service__overlay h3 {
+            font-size: 1.2rem;
+      }
+
+      .service__overlay i {
+            font-size: 1.2rem;
+      }
+
       .passport__left {
             width: 90%;
             height: 500px;
@@ -1697,7 +1781,31 @@ a {
       }
 
       .hero__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            width: 100%;
             gap: 20px;
+      }
+
+      .sliders__hero {
+            width: 100%;
+      }
+
+      .service__items {
+            gap: 20px;
+            padding: 0px 20px;
+      }
+
+      .service__item {
+            width: 50%;
+            min-width: calc(50% - 10px);
+      }
+
+      .slider-btn {
+            font-size: 1.2rem;
+            padding: 10px;
       }
 
       .comment__author img {
@@ -1744,6 +1852,11 @@ a {
 
       .prime__services__bottom .prime__item {
             width: 100%;
+      }
+
+      .slide-btn {
+            font-size: 1.2rem;
+            padding: 10px;
       }
 
       .hello__content .img1 {
@@ -1836,6 +1949,14 @@ a {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+      }
+
+      .service__overlay h3 {
+            font-size: 1rem;
+      }
+
+      .service__overlay i {
+            font-size: 1.2rem;
       }
 
       .comment__author h3 {
@@ -2003,7 +2124,94 @@ a {
 @media (max-width: 590px) {
 
       .service__item a img {
-            height: 250px;
+            height: 240px;
+            border-radius: 15px;
+      }
+
+      .slider-btn {
+            font-size: 1rem;
+            padding: 8px;
+      }
+
+      .our__content {
+            gap: 10px;
+      }
+
+      .our__item {
+            width: 220px;
+            border-radius: 20px;
+            padding: 10px 20px;
+      }
+
+      .our__top {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 20px;
+      }
+
+      .our__top h3 {
+            font-size: 1rem;
+      }
+
+      .our__top i {
+            font-size: 1.8rem;
+            transition: box-shadow 0.3s ease;
+      }
+
+      .our__item p {
+            font-size: .9rem;
+            line-height: 1.2rem;
+            color: #84848f;
+            margin-bottom: 20px;
+      }
+
+      .our__icon {
+            width: 25px;
+            height: 25px;
+      }
+
+      .our__icon i {
+            font-size: 1.5rem;
+      }
+
+      .slide-btn {
+            font-size: 1rem;
+            padding: 8px;
+      }
+
+      .slide-btn.prev { left: 0px;  }
+      .slide-btn.next { right: 0px; }
+
+      .prime__services__top .prime__item {
+            height: 200px;
+      }
+
+      .prime__services__center .prime__item {
+            height: 200px;
+      }
+
+      .prime__services__bottom .prime__item {
+            height: 200px;
+      }
+
+      .prime__item__price {
+            font-size: .7rem;
+      }
+
+      .prime__card {
+            padding: 5px;
+            border-radius: 15px;
+      }
+
+      .prime__card h5 {
+            font-size: .9rem;
+      }
+
+      .prime__card i {
+            font-size: 1.7rem;
       }
 
       .footer__top__text {
@@ -2068,6 +2276,14 @@ a {
             margin: 20px 0;
       }
 
+      .service__overlay h3 {
+            font-size: .9rem;
+      }
+
+      .service__overlay i {
+            font-size: 1rem;
+      }
+
       .service__buttons {
             display: flex;
             flex-wrap: wrap;
@@ -2079,6 +2295,10 @@ a {
       .hero__texts a button {
             padding: 10px 20px;
             font-size: .7rem;
+      }
+
+      .hello__buttons {
+            flex-wrap: wrap;
       }
 
       .footer__top__text a button {
@@ -2149,10 +2369,6 @@ a {
       .our__buttons {
             flex-wrap: wrap;
             justify-content: flex-start;
-      }
-
-      .hello__buttons {
-            flex-wrap: wrap;
       }
 
       .post__text h2 {

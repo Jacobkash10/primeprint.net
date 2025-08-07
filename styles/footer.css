@@ -275,6 +275,10 @@
             padding: 20px;
       }
 
+      .copy__text {
+            font-size: .7rem;
+      }
+
       .copy__icons .img1 {
             width: 40px;
       }
