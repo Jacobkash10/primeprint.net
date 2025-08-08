@@ -27,7 +27,8 @@ const modulesToInit = [
   'our.js',
   'filterByCategory.js',
   'servicePage.js',
-  'serviceDetails.js'
+  'serviceDetails.js',
+  'work.js',
 ];
 
 modulesToInit.forEach(moduleName => {

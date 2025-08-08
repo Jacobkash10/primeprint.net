@@ -321,7 +321,7 @@
   transform-origin: center;
 }
 
-nav-menu li a {
+.nav-menu li a {
   text-decoration: none;
   color: inherit;
   display: block;
@@ -855,7 +855,7 @@ nav-menu li a {
       }
 
       .logo img {
-            width: 90%;
+            width: 100%;
             height: auto;
       }
 
@@ -922,12 +922,12 @@ nav-menu li a {
       }
 
       .respo-nav-menu ul li {
-            font-size: 12px;
+            font-size: 13px;
             padding-bottom: 5px;
       }
 
       .respo-nav-menu ul h5 {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 700;
       }
 
@@ -949,10 +949,30 @@ nav-menu li a {
 
 }
 
+@media (max-width: 450px) {
+
+      .cart i {
+            font-size: 1.4rem;
+      }
+
+      .burger-toggle {
+            font-size: 1.3rem;
+      }
+
+      .search-wrapper-responsive .i-search {
+            font-size: 1.2rem;
+      }
+
+      .nav-center .close-menu i {
+            font-size: 1.2rem;
+      }
+
+}
+
 @media (max-width: 400px) {
 
       .logo img {
-            width: 110%;
+            width: 100%;
             height: auto;
       }
 

@@ -98,8 +98,9 @@ export function init() {
   const params = new URLSearchParams(window.location.search);
   const serviceId = params.get("id");
   const container = document.getElementById("service-detail");
-
   const service = services.find(s => s.id === serviceId);
+
+  if (!container) return;
 
   if (service) {
     container.innerHTML = `
@@ -169,36 +170,27 @@ export function init() {
       </div>
     `;
 
-    // Tabs
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
+    const tabButtons = container.querySelectorAll('.tab-btn');
+    const tabPanes = container.querySelectorAll('.tab-pane');
     tabButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         tabButtons.forEach(b => b.classList.remove('active'));
         tabPanes.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
-        document.getElementById(btn.dataset.tab).classList.add('active');
+        container.querySelector(`#${btn.dataset.tab}`).classList.add('active');
       });
     });
 
-    // More services
-    const moreContainer = document.querySelector('.more-services');
+    const moreContainer = container.querySelector('.more-services');
     const otherServices = services.filter(s => s.id !== serviceId).slice(0, 4);
-
     moreContainer.innerHTML = `
       <div class="prime__title">
-            <div class="prime__text">
-                  <h2>More Services</h2>
-            </div>
-            <div class="prime__buttons">
-                  <a href="services.html">
-                        <button class="prime__button bg-white">Browse All Services</button>
-                  </a>
-            </div>
+        <div class="prime__text"><h2>More Services</h2></div>
+        <div class="prime__buttons">
+          <a href="services.html"><button class="prime__button bg-white">Browse All Services</button></a>
+        </div>
       </div>
-      <br />
-      <br />
+      <br /><br />
       <div class="services__list__container">
         ${otherServices.map(s => `
           <div class="list__item">
@@ -219,6 +211,92 @@ export function init() {
         `).join('')}
       </div>
     `;
+
+    if (!document.getElementById('lightbox')) {
+      const lbHtml = document.createElement('div');
+      lbHtml.innerHTML = `
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+          <button class="lightbox__close" id="lbClose" aria-label="Close">×</button>
+          <button class="lightbox__nav prev" id="lbPrev" aria-label="Previous">‹</button>
+          <div class="lightbox__inner">
+            <img id="lbImage" alt="Preview"/>
+          </div>
+          <button class="lightbox__nav next" id="lbNext" aria-label="Next">›</button>
+        </div>
+      `;
+      document.body.appendChild(lbHtml.firstElementChild);
+    }
+
+    (function initLightbox() {
+      const gallery = container.querySelector('.workss__content');
+      if (!gallery) return;
+
+      const imgs = gallery.querySelectorAll('img');
+      if (!imgs.length) return;
+
+      const sources = Array.from(imgs).map(img => img.getAttribute('src'));
+
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lbImage');
+      const btnClose = document.getElementById('lbClose');
+      const btnPrev = document.getElementById('lbPrev');
+      const btnNext = document.getElementById('lbNext');
+
+      let index = 0;
+      let touchStartX = 0;
+
+      const openAt = (i) => {
+        index = ((i % sources.length) + sources.length) % sources.length;
+        lbImg.src = sources[index];
+        lb.classList.add('open');
+        document.body.classList.add('lb-no-scroll');
+        lb.setAttribute('aria-hidden', 'false');
+      };
+      const close = () => {
+        lb.classList.remove('open');
+        document.body.classList.remove('lb-no-scroll');
+        lb.setAttribute('aria-hidden', 'true');
+      };
+      const showNext = (delta = 1) => {
+        index = (index + delta + sources.length) % sources.length;
+        lbImg.style.animation = 'none';
+        requestAnimationFrame(() => {
+          lbImg.src = sources[index];
+          lbImg.style.animation = 'lbIn .2s ease';
+        });
+      };
+
+      imgs.forEach((img, i) => {
+        const a = img.closest('a');
+        (a || img).addEventListener('click', (e) => {
+          e.preventDefault();
+          openAt(i);
+        });
+      });
+
+      btnClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', () => showNext(-1));
+      btnNext.addEventListener('click', () => showNext(+1));
+
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+
+      document.addEventListener('keydown', (e) => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowRight') showNext(+1);
+        if (e.key === 'ArrowLeft') showNext(-1);
+      });
+
+      lb.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+      }, { passive: true });
+
+      lb.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) showNext(dx < 0 ? +1 : -1);
+      });
+    })();
+
   } else {
     container.innerHTML = `<p>Service not found.</p>`;
   }

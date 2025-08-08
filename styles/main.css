@@ -1212,8 +1212,8 @@ a {
       width: 100%;
       height: 248px;
       object-fit: cover;
-      border-radius: 30px;
-      margin-bottom: 30px;
+      border-radius: 25px;
+      margin-bottom: 20px;
       transition: transform 0.3s ease;
 }
 
@@ -1237,18 +1237,82 @@ a {
 .work__items .inner {
       width: 100%;
       height: 248px;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       overflow: hidden;
-      border-radius: 30px;
+      border-radius: 25px;
 }
 
 .work__item:hover .inner img {
   transform: scale(1.05);
 }
 
-.work__items:hover .inner img {
+.work__items a:hover .inner img {
   transform: scale(1.05);
 }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lightbox.open { display: flex; }
+
+/* Image wrapper */
+.lightbox__inner {
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbIn .2s ease;
+}
+.lightbox__inner img {
+  max-width: 100%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 18px; right: 22px;
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 34px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #a4a4e2;
+  border: none;
+  color: #fff;
+  font-size: 42px;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid; place-items: center;
+  transition: background .2s ease;
+}
+.lightbox__nav:hover { background: #5172fd; }
+.lightbox__nav.prev { left: 20px; }
+.lightbox__nav.next { right: 20px; }
+
+@keyframes lbIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+body.lb-no-scroll { overflow: hidden; }
+
 
 .bottom__footer {
       background-color: #1e1e24;
@@ -1371,6 +1435,11 @@ a {
       .hero1 a button {
             padding: 15px 20px;
             font-size: .8rem;
+      }
+
+      .sliders-btn {
+            font-size: 1.3rem;
+            padding: 12px;
       }
 
       .service__slider {
@@ -1645,7 +1714,7 @@ a {
             width: 100%;
             height: 248px;
             object-fit: cover;
-            border-radius: 30px;
+            border-radius: 25px;
             margin-bottom: 15px;
       }
 
@@ -1803,11 +1872,6 @@ a {
             min-width: calc(50% - 10px);
       }
 
-      .slider-btn {
-            font-size: 1.2rem;
-            padding: 10px;
-      }
-
       .comment__author img {
             width: 40px;
             height: 40px;
@@ -1852,11 +1916,6 @@ a {
 
       .prime__services__bottom .prime__item {
             width: 100%;
-      }
-
-      .slide-btn {
-            font-size: 1.2rem;
-            padding: 10px;
       }
 
       .hello__content .img1 {
@@ -2128,11 +2187,6 @@ a {
             border-radius: 15px;
       }
 
-      .slider-btn {
-            font-size: 1rem;
-            padding: 8px;
-      }
-
       .our__content {
             gap: 10px;
       }
@@ -2175,11 +2229,6 @@ a {
 
       .our__icon i {
             font-size: 1.5rem;
-      }
-
-      .slide-btn {
-            font-size: 1rem;
-            padding: 8px;
       }
 
       .slide-btn.prev { left: 0px;  }
