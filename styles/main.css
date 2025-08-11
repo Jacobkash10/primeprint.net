@@ -1139,6 +1139,101 @@ a {
       font-weight: 400;
 }
 
+.sliders__post {
+  position: relative;
+  overflow: hidden;
+  display: none;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.post__items {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.post__item2 {
+  flex: 0 0 100%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 300px;
+  position: relative;
+}
+
+.post__item2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.post__item2 .title__dates {
+      background-color: #f6f7fa;
+      width: 100%;
+      border-radius: 0 0 30px 30px;
+      padding: 10px 20px;
+      position: absolute;
+      bottom: -2px;
+      left: 0px;
+      right: 0px;
+}
+
+.post__item2 .title__dates span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+}
+
+.post__item2 .title__dates h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+}
+
+.post__item2 .title__dates p {
+      font-weight: 200;
+}
+
+.post__item2 .title__dates h5 {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+      transition: transform 0.5s ease;
+}
+
+.sliderss-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: #000;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  padding: 15px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderss-btn:hover {
+      background-color: #a4a4e2;
+      transition: transform 0.4s ease;
+}
+
+.sliderss-btn.prev { left: 0px;  }
+.sliderss-btn.next { right: 0px; }
+
+.sliderss-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+
 .works {
       background-color: #f6f7fa;
 }
@@ -1259,9 +1354,11 @@ a {
   justify-content: center;
   z-index: 9999;
 }
-.lightbox.open { display: flex; }
 
-/* Image wrapper */
+.lightbox.open { 
+      display: flex; 
+}
+
 .lightbox__inner {
   max-width: 90vw;
   max-height: 85vh;
@@ -1532,6 +1629,11 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 20px;
       }
 
+      .sliderss-btn {
+            font-size: 1.3rem;
+            padding: 12px;
+      }
+
       .works__content {
             gap: 20px;
       }
@@ -1682,6 +1784,14 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 18px;
       }
 
+      .posts__content {
+            display: none;
+      }
+
+      .sliders__post {
+            display: block;
+      }
+
       .post__text h2 {
             font-size: 3rem;
       }
@@ -1815,16 +1925,9 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 10px;
       }
 
-      .posts__content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 30px;
-      }
-
-      .post__item {
+      /* .post__item {
             width: 60%;
-      }
+      } */
 
       .footer__img img {
             width: 250px;
@@ -2122,6 +2225,10 @@ body.lb-no-scroll { overflow: hidden; }
             width: 100%;
       }
 
+      .works__container {
+            margin-top: 20px;
+      }
+
       .works__title {
             flex-direction: column;
             align-items: flex-start;
@@ -2181,6 +2288,10 @@ body.lb-no-scroll { overflow: hidden; }
 }
 
 @media (max-width: 590px) {
+
+      .hero__item img {
+            height: 300px;
+      }
 
       .service__item a img {
             height: 240px;
@@ -2261,6 +2372,28 @@ body.lb-no-scroll { overflow: hidden; }
 
       .prime__card i {
             font-size: 1.7rem;
+      }
+
+      .works__content {
+            display: flex;
+            padding-bottom: 100px;
+      }
+
+      .work__item {
+            height: 200px;
+            margin-bottom: 40px;
+      }
+
+      .work__item img {
+            height: 200px;
+      }
+
+      .work__items {
+            height: 200px;
+      }
+
+      .work__items img {
+            height: 200px;
       }
 
       .footer__top__text {

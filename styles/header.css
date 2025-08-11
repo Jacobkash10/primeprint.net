@@ -864,8 +864,8 @@
       }
 
       .search-bar input {
-            padding: 0.5rem .5rem .5rem .8rem;
-            font-size: .7rem;
+            padding: 0.6rem .5rem .6rem .8rem;
+            font-size: .8rem;
       }
 
       .search-bar input::placeholder {
@@ -873,7 +873,7 @@
       }
 
       .search-bar button i {
-            font-size: .8rem;
+            font-size: 1.1rem;
       }
 
       .nav-center i {
@@ -965,6 +965,11 @@
 
       .nav-center .close-menu i {
             font-size: 1.2rem;
+      }
+
+      .search-button, .close-search i {
+            top: -35px;
+            right: 13px;
       }
 
 }

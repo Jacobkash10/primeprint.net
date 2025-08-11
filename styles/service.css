@@ -617,3 +617,12 @@
             align-items: flex-start;
       }
 }
+
+@media (max-width: 450px) {
+
+      .service__passport__button a button {
+            padding: 10px 20px;
+            border-radius: 5rem;
+            font-size: .9rem;
+      }
+}

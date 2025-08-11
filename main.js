@@ -28,6 +28,7 @@ const modulesToInit = [
   'filterByCategory.js',
   'servicePage.js',
   'serviceDetails.js',
+  'post.js',
   'work.js',
 ];
 
