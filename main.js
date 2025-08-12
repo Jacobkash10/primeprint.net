@@ -30,6 +30,7 @@ const modulesToInit = [
   'serviceDetails.js',
   'post.js',
   'work.js',
+  'categoryPage.js',
 ];
 
 modulesToInit.forEach(moduleName => {

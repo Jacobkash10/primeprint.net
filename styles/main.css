@@ -1961,6 +1961,11 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 20px;
       }
 
+      .hero1 a button {
+            padding: 15px 30px;
+            font-size: 1rem;
+      }
+
       .sliders__hero {
             width: 100%;
       }
@@ -2084,16 +2089,16 @@ body.lb-no-scroll { overflow: hidden; }
       }
 
       .hero1 .hero__buttons {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
+            display: block;
+            width: 100%;
       }
 
       .hero1 a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            width: 100%;
+            margin-top: 10px;
       }
 
       .hero__texts h1 {
@@ -2105,12 +2110,19 @@ body.lb-no-scroll { overflow: hidden; }
       .hero__texts p {
             font-size: 1rem;
             max-width: fit-content;
-      } 
+      }
+
+      .service__buttons {
+            display: block;
+            width: 100%;
+      }
 
       .hero__texts a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            width: 100%;
+            margin-top: 10px;
       }
 
       .service__overlay h3 {
@@ -2162,20 +2174,35 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: 12px;
       }
 
+      .passport__button {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+      }
+
       .passport__button a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            margin-top: 10px;
+            width: 100%;
       }
 
       .prime__text h2 {
             font-size: 2.5rem;
       }
 
+      .prime__buttons {
+            display: block;
+            width: 100%;
+      }
+
       .prime__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            margin-top: 10px;
+            width: 100%;
       }
 
       .our h2 {
@@ -2183,10 +2210,17 @@ body.lb-no-scroll { overflow: hidden; }
             text-align: left;
       }
 
+      .our__buttons {
+            display: block;
+            width: 100%;
+      }
+
       .our__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            margin-top: 10px;
+            width: 100%;
       }
 
       .hello__content h3 {
@@ -2215,10 +2249,17 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: 2.5rem;
       }
 
+      .post__buttons {
+            display: block;
+            width: 100%;
+      }
+
       .post__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            width: 100%;
+            margin-top: 10px;
       }
 
       .post__item {
@@ -2239,10 +2280,17 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: 2.5rem;
       }
 
+      .work__buttons {
+            display: block;
+            width: 100%;
+      }
+
       .work__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .8rem;
+            width: 100%;
+            margin-top: 10px;
       }
 
       .works__content {
@@ -2466,19 +2514,6 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: 1rem;
       }
 
-      .service__buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: start;
-            align-items: center;
-            gap: 10px;
-      }
-
-      .hero__texts a button {
-            padding: 10px 20px;
-            font-size: .7rem;
-      }
-
       .hello__buttons {
             flex-wrap: wrap;
       }
@@ -2488,6 +2523,22 @@ body.lb-no-scroll { overflow: hidden; }
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .7rem;
+      }
+}
+
+@media (max-width: 420px) {
+
+      .footer__buttons {
+            display: block;
+            width: 100%;
+      }
+
+      .footer__buttons a button {
+            padding: 13px 25px;
+            border-radius: 4rem;
+            font-size: .8rem;
+            width: 100%;
+            margin-top: 10px;
       }
 }
 
@@ -2564,11 +2615,6 @@ body.lb-no-scroll { overflow: hidden; }
       .footer__top__text h2 {
             font-size: 2.2rem;
             max-width: fit-content;
-      }
-
-      .footer__buttons {
-            flex-wrap: wrap;
-            justify-content: flex-start;
       }
 
       .pass__item {

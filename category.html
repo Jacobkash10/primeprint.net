@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+      <title>Category</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="styles/category.css">
+      <link rel="stylesheet" href="styles/categories.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/header.css">
+      <link rel="stylesheet" href="styles/footer.css">
+      <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main class="container">
+    <section class="cat-hero">
+      <h1 id="categoryTitle">Category</h1>
+      <div class="meta" id="categoryMeta"></div>
+    </section>
+
+    <section class="cat-toolbar">
+      <div class="left">
+        <button class="pill active" data-cat="current">This category</button>
+        <a class="pill" href="category.html?category=all">All products</a>
+      </div>
+      <div class="right">
+        <select id="sortSelect" class="sort">
+          <option value="newest">Newest</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="cat-grid" id="productGrid"></section>
+    <p class="empty" id="emptyState" style="display:none;">No products found for this category.</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="main.js"></script>
+
+</body>
+</html>

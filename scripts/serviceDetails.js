@@ -114,12 +114,12 @@ export function init() {
             <p class="short">${service.description}</p>
             <div class="service__passport__button">
               <a href="${service.link}">
-                <button class="hero__button">Customize Now</button>
+                <button class="hero__button">Customize now</button>
               </a>
               ${
                 service.id === 'passport-photos'
                   ? `<a href="passport-requirements.html">
-                        <button class="hero__button bg-white">View Requirements</button>
+                        <button class="hero__button bg-white">View requirements</button>
                     </a>`
                   : ''
               }

@@ -594,9 +594,17 @@
 
 @media (max-width: 500px) {
 
+      .service-header {
+            margin: 10px 0;
+      }
+
       .service__banner {
             width: 100%;
             height: 300px;
+      }
+
+      .service-icon i {
+            font-size: 30px;
       }
 
       .service__banner__button {
@@ -610,11 +618,13 @@
             cursor: pointer;
             outline: none;
             font-size: .9rem;
+            width: 100%;
+            margin-top: 10px;
       }
 
       .service__passport__button {
-            flex-direction: column;
-            align-items: flex-start;
+            display: block;
+            width: 100%;
       }
 }
 
@@ -624,5 +634,7 @@
             padding: 10px 20px;
             border-radius: 5rem;
             font-size: .9rem;
+            width: 100%;
+            margin-top: 10px;
       }
 }
