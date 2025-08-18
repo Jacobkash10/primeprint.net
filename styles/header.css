@@ -1,7 +1,7 @@
 .promo {
   width: 100%;
   background-color: #37855d;
-  padding: .5rem 0;
+  padding: .5rem .4rem;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@
 
 .promo__slider {
   position: relative;
-  padding: .5rem 0;
+  padding: .5rem .4rem;
   width: 100%;
 }
 
@@ -46,7 +46,7 @@
       justify-content: space-between;
       gap: 50px;
       align-items: center;
-      padding: 20px;
+      padding: 20px 15px;
       border-bottom: #e5e7eb 1px solid;
 }
 
@@ -192,7 +192,7 @@
 }
 
 .search-bar button i {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: #000;
       transition: color 0.3s ease;
 }
@@ -217,7 +217,8 @@
 }
 
 .nav-center i {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+      font-weight: 100;
       color: #a4a4e2;
       cursor: pointer;
 }
@@ -383,7 +384,7 @@
 }
 
 .submenu-content {
-  max-width: 1200px;
+  max-width: 1330px;
   margin: 0 auto;
   display: flex;
   justify-content: start;
@@ -397,7 +398,7 @@
 }
 
 .menu-column h4 {
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 5px;
   color: #000;
   text-transform: uppercase;
@@ -405,7 +406,7 @@
 
 .menu-column a {
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
   color: #666;
   margin: 5px 0;
   transition: transform 0.3s ease;
@@ -692,6 +693,11 @@
 
 @media (max-width: 800px) {
 
+      .logo img {
+            width: 90%;
+            height: auto;
+      }
+
       .suggestions-list li {
             font-size: .9rem;
       }
@@ -710,7 +716,8 @@
       }
 
       .burger-toggle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin-top: .5rem;
       }
 
       .nav-center .close-menu {
@@ -951,16 +958,29 @@
 
 @media (max-width: 450px) {
 
+      .promo__slider h5 {
+            font-size: 0.8rem;
+      }
+
+      .promo__slider h5 span {
+            font-size: 0.7rem;
+      }
+
+      .logo img {
+            width: 165px;
+      }
+
       .cart i {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
       }
 
       .burger-toggle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
       }
 
       .search-wrapper-responsive .i-search {
             font-size: 1.2rem;
+            margin-top: .4rem;
       }
 
       .nav-center .close-menu i {
@@ -977,8 +997,7 @@
 @media (max-width: 400px) {
 
       .logo img {
-            width: 100%;
-            height: auto;
+            width: 150px;
       }
 
       .suggestion-item img {

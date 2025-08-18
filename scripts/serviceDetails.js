@@ -187,7 +187,7 @@ export function init() {
       <div class="prime__title">
         <div class="prime__text"><h2>More Services</h2></div>
         <div class="prime__buttons">
-          <a href="services.html"><button class="prime__button bg-white">Browse All Services</button></a>
+          <a href="services.html"><button class="prime__button bg-white">Browse all services</button></a>
         </div>
       </div>
       <br /><br />

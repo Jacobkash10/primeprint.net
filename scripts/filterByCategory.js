@@ -1,73 +1,47 @@
-export function init() {
-  const productsData = [
-    {
-      name: "Brown Kraft Cards",
-      image: "../assets/images/prime1.jpg",
-      category: "Business Card",
-      price: 20.90,
-      href: "https://www.primeprint.net/store/product-view.html/105-Brown-Kraft-Cards",
-      isNew: true,
-      addedAt: "2025-08-01"
-    },
-    {
-      name: "Banners with Stand",
-      image: "../assets/images/prime2.jpg",
-      category: "Displays",
-      price: 119.98,
-      href: "https://www.primeprint.net/store/product-view.html/31-Banners-With-Stand",
-      isNew: true,
-      addedAt: "2025-08-01"
-    },
-    {
-      name: "Packaging",
-      image: "../assets/images/prime1.jpg",
-      category: "Specialty Products",
-      price: 213.40,
-      href: "https://www.primeprint.net/store/product-view.html/70-Packaging",
-      isNew: false,
-      addedAt: "2025-07-01"
-    },
-    {
-      name: "Plastic Cards",
-      image: "../assets/images/prime2.jpg",
-      category: "Business Card",
-      price: 167.60,
-      href: "https://www.primeprint.net/store/product-view.html/73-Plastic-Cards",
-      isNew: false,
-      addedAt: "2025-07-01"
-    },
-    {
-      name: "Flyers and Brochures",
-      image: "../assets/images/prime1.jpg",
-      category: "Marketing Products",
-      price: 145.20,
-      href: "https://www.primeprint.net/store/product-view.html/50-Flyers-And-Brochures",
-      isNew: false,
-      addedAt: "2025-07-01"
-    },
-  ];
+import { productsData } from "./productsData.js";
 
-  const productGrid = document.getElementById("productGrid");
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const sortSelect = document.getElementById("sortSelect");
+export function init() {
+  if (window.__catalogInitDone__) return;
+  window.__catalogInitDone__ = true;
+
+  const productGrid   = document.getElementById("productGrid");
+  const paginationEl  = document.getElementById("pagination");
+  const filterBtns    = document.querySelectorAll(".filter-btn");
+  const sortSelect    = document.getElementById("sortSelect");
+
+  if (!productGrid || !paginationEl || !sortSelect) return;
 
   let currentCategory = "all";
+  let currentPage = 1;
+  const pageSize = 12;
 
-  function displayProducts(data) {
-    if (!productGrid) return;
+  const HEADER_OFFSET = 100;
 
-    productGrid.innerHTML = data.map((product) => `
+  function scrollToGridTop() {
+    const y = window.pageYOffset + productGrid.getBoundingClientRect().top - HEADER_OFFSET;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+
+  function shuffleArray(array) {
+    return array
+      .map(value => ({ value, sort: Math.random() }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ value }) => value);
+  }
+
+  function renderCards(data) {
+    productGrid.innerHTML = data.map((p) => `
       <div class="product__item">
-        <a href="${product.href}">
+        <a href="${p.href}">
+          ${p.isNew ? '<span class="badge-new">New</span>' : ''}
           <div class="inner">
-            ${product.isNew ? '<span class="badge-new">New</span>' : ''}
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${p.image}" alt="${p.name}">
           </div>
           <div class="product__item__price">
-            <p>From $${product.price.toFixed(2)} USD</p>
+            <p>From $${p.price.toFixed(2)} USD</p>
           </div>
           <div class="product__card">
-            <h5>${product.name}</h5>
+            <h5>${p.name}</h5>
             <i class='bxr bx-arrow-up-right-stroke-circle'></i>
           </div>
         </a>
@@ -75,10 +49,13 @@ export function init() {
     `).join("");
   }
 
-  function applySort(data) {
-    const sortType = (sortSelect?.value || "").trim();
-    const sorted = [...data];
+  function getSortType() {
+    const raw = (sortSelect?.value || "").trim().toLowerCase();
+    return raw === "newst" ? "newest" : raw;
+  }
 
+  function sortData(data, sortType) {
+    const sorted = [...data];
     switch (sortType) {
       case "price-low":
         sorted.sort((a, b) => a.price - b.price);
@@ -88,46 +65,121 @@ export function init() {
         break;
       case "newest":
         sorted.sort((a, b) => {
-          if (a.isNew !== b.isNew) return b.isNew - a.isNew;
-
-          const aDate = a.addedAt ? new Date(a.addedAt) : new Date(0);
-          const bDate = b.addedAt ? new Date(b.addedAt) : new Date(0);
-          return bDate - aDate;
+          if (a.isNew !== b.isNew) return (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0);
+          const ad = a.addedAt ? new Date(a.addedAt) : new Date(0);
+          const bd = b.addedAt ? new Date(b.addedAt) : new Date(0);
+          return bd - ad;
         });
         break;
       default:
         break;
     }
-
-    displayProducts(sorted);
+    return sorted;
   }
 
-  function applyFilter(category) {
-    currentCategory = category;
-
-    filterBtns.forEach((btn) => btn.classList.remove("active"));
-    const activeBtn = document.querySelector(`[data-category="${category}"]`);
-    if (activeBtn) activeBtn.classList.add("active");
-
-    const filtered = category === "all"
+  function filterData(category) {
+    return category === "all"
       ? productsData
-      : productsData.filter((p) => p.category === category);
-
-    applySort(filtered);
+      : productsData.filter(p => p.category === category);
   }
 
-  filterBtns.forEach((btn) => {
+  function paginate(data, page, perPage) {
+    const total = data.length;
+    const totalPages = Math.max(1, Math.ceil(total / perPage));
+    const safePage = Math.min(Math.max(1, page), totalPages);
+    const start = (safePage - 1) * perPage;
+    const end = start + perPage;
+    return {
+      pageItems: data.slice(start, end),
+      totalPages,
+      page: safePage,
+      total
+    };
+  }
+
+  function renderPagination({ totalPages, page }) {
+    if (totalPages <= 1) {
+      paginationEl.innerHTML = "";
+      return;
+    }
+
+    const makeBtn = (label, p, disabled = false, active = false) => `
+      <button class="page-btn ${active ? "active" : ""}" data-page="${p}" ${disabled ? "disabled" : ""}>
+        ${label}
+      </button>
+    `;
+
+    let html = "";
+    html += makeBtn("«", 1, page === 1);
+    html += makeBtn("‹", page - 1, page === 1);
+
+    const windowSize = 7;
+    let start = Math.max(1, page - Math.floor(windowSize / 2));
+    let end = Math.min(totalPages, start + windowSize - 1);
+    start = Math.max(1, end - windowSize + 1);
+
+    if (start > 1) {
+      html += makeBtn("1", 1, false, page === 1);
+      if (start > 2) html += `<span class="ellipsis">…</span>`;
+    }
+
+    for (let p = start; p <= end; p++) {
+      html += makeBtn(String(p), p, false, p === page);
+    }
+
+    if (end < totalPages) {
+      if (end < totalPages - 1) html += `<span class="ellipsis">…</span>`;
+      html += makeBtn(String(totalPages), totalPages, false, page === totalPages);
+    }
+
+    html += makeBtn("›", page + 1, page === totalPages);
+    html += makeBtn("»", totalPages, page === totalPages);
+
+    paginationEl.innerHTML = html;
+
+    paginationEl.querySelectorAll(".page-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentPage = Number(btn.dataset.page);
+        render();
+        scrollToGridTop();
+      });
+    });
+  }
+
+  function render() {
+    const sortType = getSortType();
+
+    const filtered = filterData(currentCategory);
+
+    const base = sortType ? [...filtered] : shuffleArray(filtered);
+
+    const sorted = sortData(base, sortType);
+
+    const { pageItems, totalPages, page } = paginate(sorted, currentPage, pageSize);
+
+    renderCards(pageItems);
+    renderPagination({ totalPages, page });
+  }
+
+  filterBtns.forEach(btn => {
     btn.addEventListener("click", () => {
-      const cat = btn.dataset.category || "all";
-      applyFilter(cat);
+      currentCategory = btn.dataset.category || "all";
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentPage = 1;
+      render();
+      scrollToGridTop();
     });
   });
 
-  if (sortSelect) {
-    sortSelect.addEventListener("change", () => {
-      applyFilter(currentCategory);
-    });
-  }
+  sortSelect.addEventListener("change", () => {
+    currentPage = 1;
+    render();
+    scrollToGridTop();
+  });
 
-  applyFilter("all");
+  const firstActive = document.querySelector(".filter-btn.active");
+  currentCategory = firstActive?.dataset.category || "all";
+  currentPage = 1;
+  render();
 }

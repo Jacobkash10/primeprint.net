@@ -1,105 +1,60 @@
+import { productsData } from "./productsData.js";
+
 export function init() {
-  const grid = document.getElementById('productGrid');
-  const empty = document.getElementById('emptyState');
-  const titleEl = document.getElementById('categoryTitle');
-  const metaEl = document.getElementById('categoryMeta');
-  const sortSelect = document.getElementById('sortSelect');
+  if (window.__categoryPageInitDone__) return;
+  window.__categoryPageInitDone__ = true;
+
+  const grid      = document.getElementById("productGrid");
+  const empty     = document.getElementById("emptyState");
+  const titleEl   = document.getElementById("categoryTitle");
+  const metaEl    = document.getElementById("categoryMeta");
+  const sortSelect= document.getElementById("sortSelect");
 
   if (!grid || !titleEl || !sortSelect) return;
 
-  const productsData = [
-    {
-      name: "Brown Kraft Cards",
-      image: "../assets/images/prime1.jpg",
-      category: "Business Cards",
-      price: 20.90,
-      href: "https://www.primeprint.net/store/product-view.html/105-Brown-Kraft-Cards",
-      isNew: true, addedAt: "2025-08-01"
-    },
-    {
-      name: "Banners with Stand",
-      image: "../assets/images/prime2.jpg",
-      category: "Displays",
-      price: 119.98,
-      href: "https://www.primeprint.net/store/product-view.html/31-Banners-With-Stand",
-      isNew: true, addedAt: "2025-08-02"
-    },
-    {
-      name: "Packaging",
-      image: "../assets/images/prime1.jpg",
-      category: "Specialty Products",
-      price: 213.40,
-      href: "https://www.primeprint.net/store/product-view.html/70-Packaging",
-      isNew: false, addedAt: "2025-07-01"
-    },
-    {
-      name: "Plastic Cards",
-      image: "../assets/images/prime2.jpg",
-      category: "Business Cards",
-      price: 167.60,
-      href: "https://www.primeprint.net/store/product-view.html/73-Plastic-Cards",
-      isNew: false, addedAt: "2025-07-05"
-    },
-    {
-      name: "Flyers and Brochures",
-      image: "../assets/images/prime1.jpg",
-      category: "Marketing Products",
-      price: 145.20,
-      href: "https://www.primeprint.net/store/product-view.html/50-Flyers-And-Brochures",
-      isNew: false, addedAt: "2025-07-10"
-    },
-  ];
+  const slugify = (s) =>
+    String(s).toLowerCase()
+      .replace(/&/g, " and ")
+      .replace(/\+/g, " ")                 
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
 
-  const slugify = (s) => s.toLowerCase()
-    .replace(/&/g,' and ')
-    .replace(/[^a-z0-9]+/g,'-')
-    .replace(/^-+|-+$/g,'');
-
-  const prettyFromSlug = (slug) => {
-    const map = [
-      "Business Cards",
-      "Marketing Products",
-      "Stationery Products",
-      "Signs & Posters",
-      "Displays",
-      "Specialty Products",
-      "Promo Products",
-      "All"
-    ].reduce((acc, name) => (acc[slugify(name)] = name, acc), {});
-    return map[slug] || slug.replace(/-/g,' ');
-  };
+  const uniqueCategories = [...new Set(productsData.map(p => p.category))];
+  const slugToPretty = uniqueCategories.reduce((acc, name) => {
+    acc[slugify(name)] = name;
+    return acc;
+  }, {});
 
   const url = new URL(window.location.href);
-  const raw = url.searchParams.get('category') || 'all';
-  const isAll = raw.toLowerCase() === 'all';
+  const rawParam = url.searchParams.get("category");
 
-  const currentSlug = slugify(raw);
-  const currentName = isAll ? 'All' : prettyFromSlug(currentSlug);
+  const decodedParam = rawParam ? decodeURIComponent(rawParam).replace(/\+/g, " ") : null;
 
-  titleEl.textContent = isAll ? 'All Products' : currentName;
+  const givenSlug = decodedParam ? slugify(decodedParam) : null;
+  const categoryKnown = !!(givenSlug && slugToPretty[givenSlug]);
 
-  let currentList = isAll
-    ? [...productsData]
-    : productsData.filter(p => slugify(p.category) === currentSlug);
+  const currentName = categoryKnown ? slugToPretty[givenSlug] : (decodedParam || "Unknown category");
+  titleEl.textContent = categoryKnown ? currentName : "Category";
 
-  metaEl.textContent = `${currentList.length} product${currentList.length>1?'s':''} found`;
+  const currentList = categoryKnown
+    ? productsData.filter(p => slugify(p.category) === givenSlug)
+    : [];
 
   function render(list) {
     if (!list.length) {
-      grid.innerHTML = '';
-      empty.style.display = 'block';
-      metaEl.textContent = `0 products found`;
+      grid.innerHTML = "";
+      if (empty) empty.style.display = "block";
+      if (metaEl) metaEl.textContent = `0 products found`;
       return;
     }
-    empty.style.display = 'none';
-    metaEl.textContent = `${list.length} product${list.length>1?'s':''} found`;
+    if (empty) empty.style.display = "none";
+    if (metaEl) metaEl.textContent = `${list.length} product${list.length > 1 ? "s" : ""} found`;
 
     grid.innerHTML = list.map(p => `
-      
       <div class="product__item">
         <a href="${p.href}">
           <div class="inner">
-            ${p.isNew ? '<span class="badge-new">New</span>' : ''}
+            ${p.isNew ? '<span class="badge-new">New</span>' : ""}
             <img src="${p.image}" alt="${p.name}">
           </div>
           <div class="product__item__price">
@@ -111,42 +66,42 @@ export function init() {
           </div>
         </a>
       </div>
-    `).join('');
+    `).join("");
   }
 
-  // ——— tri ———
   function sortAndRender() {
-    const sortType = sortSelect.value;
+    const raw = (sortSelect.value || "").toLowerCase().trim();
+    const sortType = raw === "newst" ? "newest" : raw;
+
     const list = [...currentList];
-    if (sortType === 'price-low') {
-      list.sort((a,b) => a.price - b.price);
-    } else if (sortType === 'price-high') {
-      list.sort((a,b) => b.price - a.price);
-    } else if (sortType === 'newest') {
-      list.sort((a,b) => {
-        const aBoost = a.isNew ? 1 : 0;
-        const bBoost = b.isNew ? 1 : 0;
-        if (aBoost !== bBoost) return bBoost - aBoost;
-        const aDate = a.addedAt ? new Date(a.addedAt) : new Date(0);
-        const bDate = b.addedAt ? new Date(b.addedAt) : new Date(0);
-        return bDate - aDate;
+    if (sortType === "price-low") {
+      list.sort((a, b) => a.price - b.price);
+    } else if (sortType === "price-high") {
+      list.sort((a, b) => b.price - a.price);
+    } else if (sortType === "newest") {
+      list.sort((a, b) => {
+        if (a.isNew !== b.isNew) return (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0);
+        const ad = a.addedAt ? new Date(a.addedAt) : new Date(0);
+        const bd = b.addedAt ? new Date(b.addedAt) : new Date(0);
+        return bd - ad;
       });
     }
     render(list);
   }
 
-  sortSelect.addEventListener('change', sortAndRender);
+  sortSelect.value = "newest";
+  sortSelect.addEventListener("change", sortAndRender);
 
-  const pillCurrent = document.querySelector('.pill[data-cat="current"]');
-  const pillAll = document.querySelector('.pill[href*="category=all"]');
-  if (isAll) {
-    pillCurrent?.classList.remove('active');
-    pillAll?.classList.add('active');
-  } else {
-    pillCurrent?.classList.add('active');
-    pillAll?.classList.remove('active');
-  }
+  document.querySelectorAll(".pill").forEach(pill => {
+    const href = pill.getAttribute("href") || "";
+    const m = href.match(/category=([^&]+)/);
+    const pillSlug = m ? slugify(decodeURIComponent(m[1]).replace(/\+/g, " ")) : null;
+    if (pillSlug && givenSlug && pillSlug === givenSlug) {
+      pill.classList.add("active");
+    } else {
+      pill.classList.remove("active");
+    }
+  });
 
-  sortSelect.value = 'newest';
   sortAndRender();
 }
