@@ -52,7 +52,7 @@ export function init() {
 
     grid.innerHTML = list.map(p => `
       <div class="product__item">
-        <a href="${p.href}">
+        <a href="product-detail.html?id=${p.id}">
           <div class="inner">
             ${p.isNew ? '<span class="badge-new">New</span>' : ""}
             <img src="${p.image}" alt="${p.name}">

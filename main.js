@@ -31,6 +31,7 @@ const modulesToInit = [
   'post.js',
   'work.js',
   'categoryPage.js',
+  'productDetail.js'
 ];
 
 modulesToInit.forEach(moduleName => {

@@ -3,13 +3,13 @@ import { productsData } from "./productsData.js";
 export function init() {
 
   const categories = [
-    { name: "Business Cards", link: "https://www.primeprint.net/store/category/business-cards" },
-    { name: "Marketing Products", link: "https://www.primeprint.net/store/category/marketing" },
-    { name: "Stationery Products", link: "https://www.primeprint.net/store/category/stationery" },
-    { name: "Displays", link: "https://www.primeprint.net/store/category/displays" },
-    { name: "Specialty Products", link: "https://www.primeprint.net/store/category/specialty" },
-    { name: "Promo Products", link: "https://www.primeprint.net/store/category/promo" },
-    { name: "Services", link: "https://www.primeprint.net/services" }
+    { name: "Business Cards", link: "category.html?category=Business%20Cards" },
+    { name: "Marketing Products", link: "category.html?category=Marketing%20Products" },
+    { name: "Stationery Products", link: "category.html?category=Stationery%20Products" },
+    { name: "Signs & Posters", link: "category.html?category=Signs%20%26%20Posters" },
+    { name: "Displays", link: "category.html?category=Displays" },
+    { name: "Specialty Products", link: "category.html?category=Specialty%20Products" },
+    { name: "Promotional Item", link: "category.html?category=Promotional%20Item" },
   ];
 
   document.querySelectorAll(".search-wrapper, .search-wrapper-responsive").forEach(wrapper => {
@@ -53,7 +53,7 @@ export function init() {
         filteredProducts.forEach(p => {
           const li = document.createElement("li");
           li.innerHTML = `
-            <a href="${p.href}" class="suggestion-item">
+            <a href="product-detail.html?id=${p.id}" class="suggestion-item">
               <img src="${p.image}" alt="${p.name}" />
               <span>${p.name}</span>
             </a>

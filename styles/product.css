@@ -1,0 +1,113 @@
+.pd-info {
+      padding-bottom: 250px;
+}
+
+.hidden { 
+      display: none !important; 
+}
+
+.pd-gallery { 
+      max-width: 620px; 
+      height: 500px;
+      margin-top: 3rem;
+}
+
+.pd-big { 
+      width: 100%;
+      height: 100%; 
+      border-radius: 2rem; 
+      transition: opacity .15s ease;
+      object-fit: cover; 
+      border: 1px solid #e7e7ef;
+}
+
+.pd-thumbs { 
+      display: flex; 
+      gap: 10px; 
+      margin-top: 20px; 
+      flex-wrap: wrap; 
+}
+
+.pd-thumb { 
+      border: 1px solid #e7e7ef; 
+      border-radius: 1rem; 
+      padding: 6px; 
+      background: #fff; 
+      cursor: pointer; 
+}
+.pd-thumb.active { 
+      outline: 2px solid #111; 
+}
+
+.pd-thumb img { 
+      width: 80px; 
+      height: 80px; 
+      object-fit: cover; 
+      border-radius: 6px; 
+      display: block; 
+}
+
+.pd-info {
+      margin-top: 10rem;
+}
+
+.pd-info h1 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+}
+
+.pd-info h5 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+}
+
+.pd-info p {
+      margin-bottom: 1rem;
+      font-weight: 300;
+      color: #84848f;
+      font-size: 1.1rem;
+}
+
+.prime__button button {
+      background-color: #000;
+      color: #ffffff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+}
+
+.prime__button button:hover {
+      background-color: #a4a4e2;
+      color: #ffffff;
+}
+
+@media (max-width: 600px) {
+
+      .prime__button button {
+            padding: 13px 25px;
+            border-radius: 4rem;
+            font-size: .8rem;
+            margin-top: 10px;
+            width: 100%;
+      }
+}
+
+@media (max-width: 590px) {
+
+      .pd-info {
+            margin-top: 20rem;
+      }
+}
+
+@media (max-width: 400px) {
+
+      .pd-info {
+            margin-top: 25rem;
+      }
+}

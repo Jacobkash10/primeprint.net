@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles/product.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+  <title>PrimePrint / Product Details</title>
+</head>
+<body>
+  <div id="header"></div>
+
+  <section class="product-detail container">
+
+    <p id="pdNotFound" style="display:none;margin:1rem 0;">
+      Sorry, this product could not be found.
+    </p>
+
+    <div class="pd-gallery">
+      <img id="pdBig" class="pd-big" alt="">
+      <div id="pdThumbs" class="pd-thumbs" role="tablist"></div>
+    </div>
+
+    <div class="pd-info">
+      <h1 id="pdTitle"></h1>
+      <h5 class="pd-price" id="pdPrice"></h5>
+      <p id="pdDesc"></p>
+      <a id="pdBuy" class="prime__button" target="_blank" rel="noopener">
+        <button type="button">Customize now</button>
+      </a>
+    </div>
+  </section>
+
+  <section class="bottom__footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__top__text">
+          <h2>Crafted with Care. Delivered with Precision.</h2>
+          <div class="footer__buttons">
+            <a href="#"><button class="footer__button">Customize now</button></a>
+            <a href="services.html"><button class="footer__button bg-white">Browse all services</button></a>
+          </div>
+        </div>
+        <div class="footer__img">
+          <img src="../assets/images/flags.png" alt="foot1" class="img1">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

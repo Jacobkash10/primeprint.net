@@ -32,7 +32,7 @@ export function init() {
   function renderCards(data) {
     productGrid.innerHTML = data.map((p) => `
       <div class="product__item">
-        <a href="${p.href}">
+        <a href="product-detail.html?id=${p.id}">
           ${p.isNew ? '<span class="badge-new">New</span>' : ''}
           <div class="inner">
             <img src="${p.image}" alt="${p.name}">
