@@ -3,7 +3,8 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="styles/main.css">
+      <link rel="stylesheet" href="styles/main.css">              
+      <link rel="stylesheet" href="styles/categories.css">              
       <link rel="stylesheet" href="styles/header.css">
       <link rel="stylesheet" href="styles/footer.css">
       <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
@@ -30,11 +31,11 @@
                               <h1>From Digital to Print, Made Simple.</h1>
                               <p>Seamless ordering for all your print essentials – fast, affordable, and reliable.</p>
                               <div class="hero__buttons">
-                                    <a href="https://www.primeprint.net/store/product-view.html/categories">
+                                    <!-- <a href="https://www.primeprint.net/store/product-view.html/categories">
                                           <button class="hero__button">Customize now</button>
-                                    </a>
+                                    </a> -->
                                     <a href="categories.html">
-                                          <button class="hero__button bg-white">Browse all categories</button>
+                                          <button class="hero__button">Browse all categories</button>
                                     </a>
                               </div>
                         </div>
@@ -187,82 +188,14 @@
                   <div class="hero__texts">
                         <h1>Featured products</h1>
                         <p>Bring your brand to life with our top-selling print essentials.</p>
-                        <div class="service__buttons">
-                              <a href="https://www.primeprint.net/store/product-view.html/33-Business-Cards">
-                                    <button class="hero__button">Customize now</button>
-                              </a>
-                              <a href="categories.html">
-                                    <button class="hero__button bg-white">Browse all products</button>
-                              </a>
-                        </div>
                   </div>
-                  <div class="service__slider">
-                        <button class="slider-btn prev">
-                              <i class='bxr  bx-arrow-left-stroke'  ></i> 
-                        </button>
-
-                        <div class="service__items" id="slider">
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/33-Business-Cards">
-                                          <img src="../assets/images/service1.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Business Cards</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/68-passport-pictures">
-                                          <img src="../assets/images/service2.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Passport Pictures</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/31-Banners-With-Stand">
-                                          <img src="../assets/images/service1.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Roll-Up Banners</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/50-Flyers-And-Brochures">
-                                          <img src="../assets/images/service2.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Flyers & Brochures</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/126-Sidewalk-Signs">
-                                          <img src="../assets/images/service1.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Sidewalk Signs</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                              <div class="service__item">
-                                    <a href="https://www.primeprint.net/store/product-view.html/98-Outdoor-Banners">
-                                          <img src="../assets/images/service2.jpg" alt="hero1">
-                                          <div class="service__overlay">
-                                                <h3>Banners</h3>
-                                                <i class='bx  bx-arrow-in-up-right-stroke-circle'  ></i> 
-                                          </div>
-                                    </a>
-                              </div>
-                        </div>
-
-                        <button class="slider-btn next">
-                              <i class='bxr  bx-arrow-right-stroke'  ></i> 
-                        </button>
+                  <div class="service__buttons">
+                        <a href="categories.html">
+                              <button class="hero__button bg-white">Browse all products</button>
+                        </a>
                   </div>
             </div>
+            <div id="homeProducts" class="product-grid"></div>
             <div class="comments">
                   <div class="comment">
                         <div class="comment__text">
@@ -352,11 +285,11 @@
                   </div>
             </div>
             <div class="passport__button">
-                  <a href="passport-requirements.html">
-                        <button class="hero__button">View photo requirements</button>
-                  </a>
                   <a href="https://www.primeprint.net/store/product-view.html/780/90343">
-                        <button class="hero__button bg-white">Customize now</button>
+                        <button class="hero__button">Customize now</button>
+                  </a>
+                  <a href="passport-requirements.html">
+                        <button class="hero__button bg-white">View photo requirements</button>
                   </a>
             </div>
       </section>
@@ -368,9 +301,9 @@
                         <h2>Our Prime Categories</h2>
                   </div>
                   <div class="prime__buttons">
-                        <a href="#">
+                        <!-- <a href="https://primeprint.online/product-detail.html?id=61">
                               <button class="prime__button">Customize now</button>
-                        </a>
+                        </a> -->
                         <a href="categories.html">
                               <button class="prime__button bg-white">Browse all categories</button>
                         </a>
@@ -570,8 +503,8 @@
             </div>
             <div class="our__bottom">
                   <div class="our__buttons">
-                        <a href="#">
-                              <button class="our__button">Customize now</button>
+                        <a href="https://www.primeprint.net/help/index.html">
+                              <button class="our__button">Contact us</button>
                         </a>
                         <a href="services.html">
                               <button class="our__button bg-white">Browse all services</button>
@@ -586,15 +519,15 @@
                         <h3>Bring your ideas to life in vibrant color.</h3>
                         <p>Whether it’s your brand, your event, or your packaging — we deliver prints that impress, every time.</p>
                         <div class="hello__buttons">
-                              <a href="#">
+                              <a href="https://primeprint.online/product-detail.html?id=61">
                                     <button class="hello__button">Customize now</button>
                               </a>
                               <a href="services.html">
                                     <button class="hello__button bg-white">Browse all services</button>
                               </a>
                         </div>
-                        <img src="../assets/images/hello.png" alt="hello" class="img1">
-                        <img src="../assets/images/smile.png" alt="smile" class="img2">
+                        <img src="../assets/images/buttons.png" alt="hello" class="img1">
+                        <img src="../assets/images/buttons2.png" alt="smile" class="img2">
                   </div>
             </div>
       </section>
@@ -605,7 +538,7 @@
                         <h2>Read our latest resources</h2>
                   </div>
                   <div class="post__buttons">
-                        <a href="#">
+                        <a href="http://blog.primeprint.net/">
                               <button class="prime__button bg-white">Browse all posts</button>
                         </a>
                   </div>
@@ -727,7 +660,7 @@
                         </div>
                         <div class="work__buttons">
                               <a href="#">
-                                    <button class="prime__button bg-white">Follow us</button>
+                                    <button class="prime__button bg-white">View more</button>
                               </a>
                         </div>
                   </div>
@@ -768,7 +701,7 @@
                         <div class="footer__top__text">
                               <h2>Crafted with Care. Delivered with Precision.</h2>
                               <div class="footer__buttons">
-                                    <a href="#">
+                                    <a href="https://primeprint.online/product-detail.html?id=61">
                                           <button class="footer__button">Customize now</button>
                                     </a>
                                     <a href="services.html">

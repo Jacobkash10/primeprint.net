@@ -188,7 +188,7 @@
 }
 
 .search-bar button i:hover {
-      color: #a4a4e2;
+      color: #72b7e4;
 }
 
 .search-bar button i {
@@ -205,7 +205,7 @@
 }
 
 .text p:hover {
-      color: #a4a4e2;
+      color: #72b7e4;
 }
 
 .nav-right {
@@ -219,7 +219,7 @@
 .nav-center i {
       font-size: 1.7rem;
       font-weight: 100;
-      color: #a4a4e2;
+      color: #72b7e4;
       cursor: pointer;
 }
 
@@ -237,7 +237,7 @@
 }
 
 .cart {
-      border-left: #a4a4e2 1px solid;
+      border-left: #72b7e4 1px solid;
       padding-left: 10px;
       position: relative;
 }
@@ -252,7 +252,7 @@
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background-color: #a4a4e2;
+      background-color: #72b7e4;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -413,7 +413,7 @@
 }
 
 .menu-column a:hover {
-  color: #a4a4e2;
+  color: #72b7e4;
 }
 
 .click-toggle {
@@ -553,7 +553,7 @@
 }
 
 .menu-columns a:hover {
-  color: #a4a4e2;
+  color: #72b7e4;
 }
 
 /* media query */
