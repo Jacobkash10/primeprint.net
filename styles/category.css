@@ -28,7 +28,7 @@
       
 }
     .pill { 
-      padding: 10px 30px; 
+      padding: 12px 30px; 
       border: 1px solid #e5e7eb; 
       border-radius: 999px; 
       font-size: 1rem; 
@@ -39,6 +39,16 @@
       color: #fff; 
       border-color: #000; 
       }
+
+    .pill-all {
+      background-color: #000;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .pill-all:hover {
+      background-color: #72b7e4;
+    }
 
     .sort {
       border: 1px solid #e5e7eb; 

@@ -156,11 +156,11 @@ export function init() {
         <section>
           <div class="workss__container container">
             <div class="workss__content">
-              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/w1.jpg" alt="work1"></div></a></div>
-              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/w2.jpg" alt="work2"></div></a></div>
+              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/Work0.png" alt="work1"></div></a></div>
+              <div class="work__item"><a href="#"><div class="inner"><img src="../assets/images/Work1.png" alt="work2"></div></a></div>
               <div class="work__items">
-                <a href="#"><div class="inner"><img src="../assets/images/w3.jpg" alt="work3"></div></a>
-                <a href="#"><div class="inner"><img src="../assets/images/w4.jpg" alt="work4"></div></a>
+                <a href="#"><div class="inner"><img src="../assets/images/Work2.png" alt="work3"></div></a>
+                <a href="#"><div class="inner"><img src="../assets/images/Work3.png" alt="work4"></div></a>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ export function init() {
       <div class="prime__title">
         <div class="prime__text"><h2>More Services</h2></div>
         <div class="prime__buttons">
-          <a href="services.html"><button class="prime__button bg-white">Browse all services</button></a>
+          <a href="services.html"><button class="prime__button">Browse all services</button></a>
         </div>
       </div>
       <br /><br />

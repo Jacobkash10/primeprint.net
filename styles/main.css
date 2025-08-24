@@ -87,7 +87,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -96,6 +96,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: #e7e7f2 1px solid;
+      font-weight: 500;
 }
 
 .hero1 a button:hover {
@@ -320,7 +321,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -330,6 +331,7 @@ a {
       color: #000;
       border: #e7e7f2 1px solid;
       transition: background-color 0.3s ease;
+      font-weight: 500;
 }
 
 .service__buttons a button:hover {
@@ -390,7 +392,7 @@ a {
       font-weight: 500;
       color: #84848f;
       line-height: 1.5rem;
-      max-width: 470px;
+      max-width: 465px;
       margin: 10px 0;
       text-align: center;
 }
@@ -408,14 +410,14 @@ a {
 }
 
 .passport__left {
-      width: 60%;
+      width: 55%;
       background-color: #f8ae1d;
       border-radius: 40px;
       height: 650px;
 }
 
 .passport__right {
-      width: 40%;
+      width: 45%;
       position: relative;
 }
 
@@ -429,7 +431,7 @@ a {
 .abs {
       position: absolute;
       left: -130px;
-      top: -230px;
+      top: -275px;
       width: 100%;
 }
 
@@ -451,13 +453,19 @@ a {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 15px 20px;
-      font-size: 1.1rem;
+      padding: 15px 22px;
+      font-size: 1.6rem;
+      background-color: #fff;
 }
 
-.color1 { background-color: #FFEB3B; }
-.color2 { background-color: #ffc107; }
-.color3 { background-color: #2196F3; color: #fff; }
+.pass__item__img img {
+      width: 100px;
+      height: 100px;
+}
+
+.color1 { background-color: #eff7e6; color: #166341; }
+.color2 { background-color: #fff5d6; color: #c57a00 }
+.color3 { background-color: #e7f4df; color: #145e3e; }
 
 .pass__item__details h3 {
       font-size: 1.5rem;
@@ -486,7 +494,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -495,6 +503,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: #dadaf6 1px solid;
+      font-weight: 500;
 }
 
 .passport__button a button:hover {
@@ -538,7 +547,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -547,6 +556,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: solid 1px #dadaf6;
+      font-weight: 500;
 }
 
 .prime__buttons a button:hover {
@@ -795,7 +805,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -804,6 +814,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: solid 1px #e7e7f0;
+      font-weight: 500;
 }
 
 .our__buttons a button:hover {
@@ -843,12 +854,17 @@ a {
 }
 
 .hello__container {
-      background-color: #2196F3;
       position: absolute;
       top: -300px;
-      right: 0;
-      left: 0;
+      right: 20px;
+      left: 20px;
       border-radius: 30px;
+      background-image: 
+      radial-gradient(circle at center, rgba(13, 71, 161, 1), rgba(33, 150, 243, 0.7)),
+      url('../assets/images/bg-bring.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 }
 
 .hello__content {
@@ -881,7 +897,7 @@ a {
       width: 400px;
       object-fit: cover;
       top: -120px;
-      left: -90px;
+      left: -75px;
 }
 
 .hello__content .img2 {
@@ -907,7 +923,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -917,6 +933,7 @@ a {
       color: #fff;
       border: solid 1px #dadaf6;
       transition: background-color 0.3s ease;
+      font-weight: 500;
 }
 
 .hello__buttons a button:hover {
@@ -959,7 +976,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -968,6 +985,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: solid 1px #dadaf6;
+      font-weight: 500;
 }
 
 .post__buttons a button:hover {
@@ -977,8 +995,7 @@ a {
 
 .posts__content {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      align-items: flex-start;
       gap: 30px;
       width: 100%;
       margin-top: 30px;
@@ -1172,7 +1189,7 @@ a {
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -1181,6 +1198,7 @@ a {
       background-color: #ffffff;
       color: #000;
       border: solid 1px #dadaf6;
+      font-weight: 500;
 }
 
 .work__buttons a button:hover {
@@ -1351,7 +1369,7 @@ body.lb-no-scroll { overflow: hidden; }
       border: none;
       border-radius: 5rem;
       font-size: 1rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
 }
@@ -1360,6 +1378,7 @@ body.lb-no-scroll { overflow: hidden; }
       background-color: transparent;
       color: #fff;
       border: #fff 1px solid;
+      font-weight: 500;
 }
 
 .footer__top__text a button:hover {
@@ -1382,14 +1401,14 @@ body.lb-no-scroll { overflow: hidden; }
 .footer__img .img1 {
       position: absolute;
       top: -370px;
-      right: 170px;
+      right: 0px;
 }
 
-.footer__img .img2 {
+/* .footer__img .img2 {
       position: absolute;
       top: -270px;
       right: 0px;
-}
+} */
 
 /* media query */
 
@@ -1409,6 +1428,15 @@ body.lb-no-scroll { overflow: hidden; }
       .badges__container {
             max-width: 1400px;
             padding: 20px 40px;
+      }
+
+      .hello__container {
+            background-color: #2196F3;
+            position: absolute;
+            top: -300px;
+            right: 50px;
+            left: 50px;
+            border-radius: 30px;
       }
 }
 
@@ -1621,8 +1649,8 @@ body.lb-no-scroll { overflow: hidden; }
       }
 
       .hello__content .img1 {
-            height: 350px;
-            width: 350px;
+            height: 300px;
+            width: 300px;
             top: -120px;
             left: -70px;
       }
@@ -1630,7 +1658,7 @@ body.lb-no-scroll { overflow: hidden; }
       .posts__content {
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 10px;
+            gap: 20px;
       }
 
       .post__item {
@@ -1652,7 +1680,7 @@ body.lb-no-scroll { overflow: hidden; }
       .footer__img .img1 {
             position: absolute;
             top: -300px;
-            right: 130px;
+            right: 0px;
       }
 
       .footer__img .img2 {
@@ -1699,10 +1727,6 @@ body.lb-no-scroll { overflow: hidden; }
 
       .our__content {
             gap: 18px;
-      }
-
-      .posts__content {
-            display: none;
       }
 
       .sliders__post {
@@ -1821,9 +1845,14 @@ body.lb-no-scroll { overflow: hidden; }
             width: 80%;
       }
 
+      .pass__item__img img {
+            width: 70px;
+            height: 70px;
+      }
+
       .hello__content .img1 {
-            height: 300px;
-            width: 300px;
+            height: 270px;
+            width: 270px;
             top: -120px;
             left: -50px;
       }
@@ -1853,7 +1882,7 @@ body.lb-no-scroll { overflow: hidden; }
       .footer__img .img1 {
             position: absolute;
             top: -280px;
-            right: 120px;
+            right: 0px;
       }
 
       .footer__img .img2 {
@@ -1916,42 +1945,23 @@ body.lb-no-scroll { overflow: hidden; }
             margin-top: 30px;
       }
 
-      .prime__services__top {
-            flex-direction: column;
-            align-items: start;
-      }
-
-      .prime__services__center {
-            flex-direction: column;
-            align-items: start;
-      }
-
-      .prime__services__bottom {
-            flex-direction: column;
-            align-items: start;
-      }
-
-      .prime__services__top .prime__item {
-            width: 100%;
-      }
-
-      .prime__services__center .prime__item {
-            width: 100%;
-      }
-
-      .prime__services__bottom .prime__item {
-            width: 100%;
-      }
-
       .hello__content .img1 {
-            height: 300px;
-            width: 300px;
+            height: 250px;
+            width: 250px;
             top: -160px;
             left: -40px;
       }
 
+      .hello__content .img2 {
+            height: 180px;
+            width: 180px;
+            bottom: -70px;
+            right: 10px;
+      }
+
       .works__content {
             gap: 5px;
+            padding-bottom: 100px;
       }
 
       .work__items {
@@ -1959,20 +1969,20 @@ body.lb-no-scroll { overflow: hidden; }
       }
 
       .footer__img img {
-            width: 200px;
+            width: 300px;
       }
 
       .footer__img .img1 {
             position: absolute;
             top: -280px;
-            right: 100px;
+            right: 0px;
       }
 
-      .footer__img .img2 {
+      /* .footer__img .img2 {
             position: absolute;
             top: -200px;
             right: 0px;
-      }
+      } */
 
       .footer__top__text h2 {
             font-size: 2.5rem;
@@ -1985,7 +1995,7 @@ body.lb-no-scroll { overflow: hidden; }
             background-color: #fff;
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
       }
 }
 
@@ -2013,7 +2023,7 @@ body.lb-no-scroll { overflow: hidden; }
       .hero1 a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             width: 100%;
             margin-top: 10px;
       }
@@ -2038,7 +2048,7 @@ body.lb-no-scroll { overflow: hidden; }
       .service__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             width: 100%;
       }
 
@@ -2083,6 +2093,16 @@ body.lb-no-scroll { overflow: hidden; }
             margin-top: 30px;
       }
 
+      .pass__item {
+            padding: 20px;
+            gap: 20px;
+      }
+
+      .pass__item__number {
+            font-size: 1.2rem;
+            padding: 10px 16px;
+      }
+
       .pass__item__details h3 {
             font-size: 1.1rem;
       }
@@ -2100,7 +2120,7 @@ body.lb-no-scroll { overflow: hidden; }
       .passport__button a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             margin-top: 10px;
             width: 100%;
       }
@@ -2117,7 +2137,7 @@ body.lb-no-scroll { overflow: hidden; }
       .prime__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             margin-top: 10px;
             width: 100%;
       }
@@ -2135,7 +2155,7 @@ body.lb-no-scroll { overflow: hidden; }
       .our__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             margin-top: 10px;
             width: 100%;
       }
@@ -2152,18 +2172,43 @@ body.lb-no-scroll { overflow: hidden; }
       .hello__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
       }
 
       .hello__content .img1 {
-            height: 260px;
-            width: 260px;
-            top: -130px;
-            left: -40px;
+            height: 180px;
+            width: 180px;
+            top: -100px;
+            left: -30px;
+      }
+
+      .hello__content .img2 {
+            height: 160px;
+            width: 160px;
+            bottom: -70px;
+            right: 10px;
+      }
+
+      .posts__content {
+            gap: 30px;
       }
 
       .post__text h2 {
             font-size: 2.5rem;
+      }
+
+      .post__item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+      }
+
+      .post__item .inner {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 20px;
       }
 
       .post__buttons {
@@ -2174,7 +2219,7 @@ body.lb-no-scroll { overflow: hidden; }
       .post__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             width: 100%;
             margin-top: 10px;
       }
@@ -2205,7 +2250,7 @@ body.lb-no-scroll { overflow: hidden; }
       .work__buttons a button {
             padding: 13px 25px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
             width: 100%;
             margin-top: 10px;
       }
@@ -2226,30 +2271,51 @@ body.lb-no-scroll { overflow: hidden; }
 
       .footer__top {
             flex-direction: column;
-            gap: 0px;
+            gap: 10px;
             align-items: flex-start;
             width: 100%;
       }
 
       .footer__top__text {
-            width: 80%;
+            width: 100%;
+      }
+
+      .footer__buttons {
+            display: block;
+            width: 100%;
+      }
+
+      .footer__buttons a button {
+            padding: 13px 25px;
+            border-radius: 4rem;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 10px;
+      }
+
+      .footer__img {
+            display: block;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
       }
       
       .footer__img img {
-            width: 180px;
+            width: 200px;
       }
 
       .footer__img .img1 {
-            position: absolute;
-            top: -280px;
-            right: -520px;
+            position: relative;
+            top: 30px;
       }
 
-      .footer__img .img2 {
+      /* .footer__img .img2 {
             position: absolute;
             top: -200px;
             right: -550px;
-      }
+      } */
 }
 
 @media (max-width: 590px) {
@@ -2364,10 +2430,6 @@ body.lb-no-scroll { overflow: hidden; }
       .footer__top__text {
             width: 100%;
       }
-
-      .footer__img img {
-            display: none;
-      }
 }
 
 @media (max-width: 500px) {
@@ -2435,15 +2497,46 @@ body.lb-no-scroll { overflow: hidden; }
             flex-wrap: wrap;
       }
 
-      .footer__top__text a button {
+      .prime__services__top {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__center {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__bottom {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__top .prime__item {
+            width: 100%;
+      }
+
+      .prime__services__center .prime__item {
+            width: 100%;
+      }
+
+      .prime__services__bottom .prime__item {
+            width: 100%;
+      }
+
+      .footer__top__text h2 {
+            font-size: 2rem;
+      }
+
+      /* .footer__top__text a button {
             background-color: #fff;
             padding: 13px 25px;
             border-radius: 4rem;
             font-size: .7rem;
-      }
+      } */
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
 
       .footer__buttons {
             display: block;
@@ -2457,7 +2550,7 @@ body.lb-no-scroll { overflow: hidden; }
             width: 100%;
             margin-top: 10px;
       }
-}
+} */
 
 @media (max-width: 400px) {
 
@@ -2468,7 +2561,7 @@ body.lb-no-scroll { overflow: hidden; }
       .hero1 a button {
             padding: 10px 20px;
             border-radius: 4rem;
-            font-size: .7rem;
+            font-size: 1rem;
       }
 
       .hero__texts h1 {
@@ -2500,7 +2593,7 @@ body.lb-no-scroll { overflow: hidden; }
       .passport__button a button {
             padding: 13px 20px;
             border-radius: 4rem;
-            font-size: .8rem;
+            font-size: 1rem;
       }
 
       .prime__text h2 {

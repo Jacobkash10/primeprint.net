@@ -338,10 +338,22 @@
   transform: translateX(-50%) scaleX(1);
 }
 
+.nav-menu li.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Optionnel: style du texte actif */
+.nav-menu li.active > a,
+.respo-nav-menu a.active {
+  font-weight: 700;
+  color: #000;
+}
+
 .nav-menu ul h5 {
   font-size: 14px;
   font-weight: 700;
 }
+
 
 /* --- SUBMENU --- */
 

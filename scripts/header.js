@@ -84,6 +84,7 @@ export function init() {
       <h4>Specialty Products</h4>
       <a href="product-detail.html?id=59">Mounted Canvas</a>
       <a href="product-detail.html?id=60">Packaging</a>
+      <a href="service.html?id=passport-photos">Passport Photos</a>
     </div>
     <div class="menu-column">
       <h4>Promotional Items</h4>
@@ -113,7 +114,6 @@ export function init() {
     };
 
     if (item.classList.contains("click-toggle")) {
-      // Toggle on click
       item.addEventListener("click", (e) => {
         e.stopPropagation();
         const isVisible = submenu.classList.contains("visible");
@@ -121,7 +121,6 @@ export function init() {
         submenu.classList.toggle("visible", !isVisible);
       });
     } else {
-      // Show on hover
       item.addEventListener("mouseenter", showSubmenu);
       item.addEventListener("mouseleave", hideSubmenu);
     }
@@ -130,14 +129,12 @@ export function init() {
     submenu.addEventListener("mouseleave", hideSubmenu);
   });
 
-  // Click outside to close
   document.addEventListener("click", (e) => {
     if (!submenu.contains(e.target)) {
       submenu.classList.remove("visible");
     }
   });
 
-// Gestion du menu burger
 const burger = document.querySelector(".burger-toggle");
 const navCenter = document.querySelector(".nav-center");
 const closeMenu = navCenter?.querySelector(".close-menu");
@@ -167,21 +164,73 @@ document.addEventListener("click", (e) => {
 });
 
 const slides = document.querySelectorAll(".promo__slider h5");
-  if (!slides.length) return;
-
+if (slides.length) {
   let current = 0;
-
   const showSlide = (index) => {
-    slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
-    });
+    slides.forEach((slide, i) => slide.classList.toggle("active", i === index));
   };
-
-  showSlide(current); 
-
+  showSlide(current);
   setInterval(() => {
     current = (current + 1) % slides.length;
     showSlide(current);
   }, 8000);
+}
+
+function computeActive(link, currentURL) {
+  const cur = currentURL || new URL(window.location.href);
+  const curPath = cur.pathname.replace(/\/+$/, '');
+  const curFile = curPath.split('/').pop() || 'index.html';
+  const curCat  = cur.searchParams.get('category');
+
+  const linkURL = new URL(link.getAttribute('href'), window.location.href);
+  const linkPath = linkURL.pathname.replace(/\/+$/, '');
+  const linkFile = linkPath.split('/').pop() || 'index.html';
+  const linkCat  = linkURL.searchParams.get('category');
+
+  if (curFile === 'category.html' && linkFile === 'category.html') {
+    if (curCat && linkCat && decodeURIComponent(curCat) === decodeURIComponent(linkCat)) return true;
+    return false;
+  }
+  return linkFile === curFile;
+}
+
+function setActiveClasses() {
+  const currentURL = new URL(window.location.href);
+  const allLinks = document.querySelectorAll('.nav-menu a, .respo-nav-menu a');
+
+  allLinks.forEach(link => {
+    const isActive = computeActive(link, currentURL);
+    const li = link.closest('li');
+    link.classList.toggle('active', isActive);
+    if (li) li.classList.toggle('active', isActive);
+  });
+}
+
+setActiveClasses();
+
+window.addEventListener('load', setActiveClasses);
+
+const headerHost = document.getElementById('header') || document.body;
+const mo = new MutationObserver(() => setActiveClasses());
+mo.observe(headerHost, { childList: true, subtree: true });
+
+function bindOptimisticClick() {
+  const allLinks = document.querySelectorAll('.nav-menu a, .respo-nav-menu a');
+  allLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-menu a.active, .respo-nav-menu a.active').forEach(a => {
+        a.classList.remove('active');
+        a.closest('li')?.classList.remove('active');
+      });
+      link.classList.add('active');
+      link.closest('li')?.classList.add('active');
+    }, { capture: true });
+  });
+}
+bindOptimisticClick();
+
+const moLinks = new MutationObserver(() => bindOptimisticClick());
+moLinks.observe(document.querySelector('.nav-bottom') || document.body, { childList: true, subtree: true });
+
 
 }
