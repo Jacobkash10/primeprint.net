@@ -179,6 +179,11 @@ a {
   width: 50%;
 }
 
+#slider__hero {
+  touch-action: pan-y;
+  will-change: transform;
+}
+
 .hero__items {
   display: flex;
   transition: transform 0.4s ease;
@@ -578,7 +583,7 @@ a {
 
 .prime__services__top .prime__item {
       width: 50%;
-      height: 650px;
+      height: 520px;
       border-radius: 30px;
       position: relative;
       overflow: hidden;
@@ -647,7 +652,7 @@ a {
 
 .prime__services__center .prime__item {
       width: 50%;
-      height: 480px;
+      height: 420px;
       border-radius: 30px;
       position: relative;
       overflow: hidden;
@@ -749,7 +754,7 @@ a {
 
 .our__top h3 {
       font-size: 1.4rem;
-      font-weight: 500;
+      font-weight: 600;
       transition: box-shadow 0.3s ease;
 }
 
@@ -822,6 +827,17 @@ a {
       color: #ffffff;
 }
 
+#slider {
+  touch-action: pan-y;
+  will-change: transform;
+}
+
+#slider img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -860,7 +876,7 @@ a {
       left: 20px;
       border-radius: 30px;
       background-image: 
-      radial-gradient(circle at center, rgba(13, 71, 161, 1), rgba(33, 150, 243, 0.7)),
+      radial-gradient(circle at center, rgba(13, 71, 161, 1), rgba(33, 150, 243, 0.6)),
       url('../assets/images/bg-bring.jpg');
       background-size: cover;
       background-position: center;
@@ -1463,8 +1479,8 @@ body.lb-no-scroll { overflow: hidden; }
       }
 
       .hero1 a button {
-            padding: 15px 20px;
-            font-size: .8rem;
+            padding: 15px 30px;
+            font-size: 1rem;
       }
 
       .sliders-btn {
@@ -1625,11 +1641,11 @@ body.lb-no-scroll { overflow: hidden; }
       }
 
       .prime__services__top .prime__item {
-            height: 400px;
+            height: 360px;
       }
 
       .prime__services__center .prime__item {
-            height: 300px;
+            height: 280px;
       }
 
       .prime__services__bottom .prime__item {
@@ -1697,20 +1713,22 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 30px;
       }
 
-      .hidden {
-            display: none;
+      .hero1 h1 {
+            font-size: 2.2rem;
+            line-height: 3rem;
+            max-width: fit-content;
       }
 
       .hero1 {
-            width: 40%;
+            width: 35%;
       }
 
       .hero2 {
-            width: 40%;
+            width: 33%;
       }
 
-      .sliders__hero {
-            display: block;
+      .hero3 {
+            width: 32%;
       }
 
       .passport__left img {
@@ -1744,6 +1762,18 @@ body.lb-no-scroll { overflow: hidden; }
 }
 
 @media (max-width: 1000px) {
+
+      .hero1 {
+            width: 50%;
+      }
+
+      .hidden {
+            display: none;
+      }
+
+      .sliders__hero {
+            display: block;
+      }
 
       .works__content {
             flex-wrap: wrap;
@@ -1784,17 +1814,15 @@ body.lb-no-scroll { overflow: hidden; }
 
       .hero__container {
             justify-content: start;
-            gap: 30px;
+            gap: 10px;
       }
 
       .hero1 {
-            width: 50%;
+            width: 70%;
       }
 
-      .hero1 h1 {
-            font-size: 2.5rem;
-            line-height: 3rem;
-            max-width: fit-content;
+      .sliders__hero {
+            width: 30%;
       }
 
       .hero1 .hero__buttons {
@@ -1898,15 +1926,6 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: .6rem;
       }
 
-      .hero__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: flex-start;
-            width: 100%;
-            gap: 20px;
-      }
-
       .hero1 a button {
             padding: 15px 30px;
             font-size: 1rem;
@@ -1999,10 +2018,15 @@ body.lb-no-scroll { overflow: hidden; }
       }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
 
-      .hidden2 {
-            display: none;
+      .hero__container {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+            width: 100%;
+            gap: 20px;
       }
 
       .hero1 {
@@ -2011,8 +2035,15 @@ body.lb-no-scroll { overflow: hidden; }
 
       .hero1 h1 {
             font-size: 2.5rem;
+            line-height: 3rem;
             max-width: fit-content;
-            line-height: 2.4rem;
+      }
+}
+
+@media (max-width: 600px) {
+
+      .hidden2 {
+            display: none;
       }
 
       .hero1 .hero__buttons {

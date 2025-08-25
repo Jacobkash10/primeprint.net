@@ -11,7 +11,7 @@
       align-items: center;
       border-radius: 30px;
       background-image: 
-      radial-gradient(circle at center, rgba(13, 71, 161, 1), rgba(33, 150, 243, 0.4)),
+      radial-gradient(circle at center, rgba(13, 71, 161, 0.9), rgba(33, 150, 243, 0.6)),
       url('../assets/images/Back-products.jpg');
       background-size: cover;
       background-position: center;

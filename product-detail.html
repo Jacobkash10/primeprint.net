@@ -54,5 +54,15 @@
   <div id="footer"></div>
 
   <script src="main.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const productSection = document.querySelector(".pd-gallery");
+      if (productSection) {
+        productSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  </script>
+
 </body>
 </html>

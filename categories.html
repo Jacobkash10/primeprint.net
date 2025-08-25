@@ -80,5 +80,14 @@
       <div id="footer"></div>
 
       <script src="main.js"></script>
+
+      <script>
+      document.addEventListener("DOMContentLoaded", () => {
+            const productSection = document.querySelector(".product-grid");
+            if (productSection) {
+            productSection.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+      });
+      </script>
 </body>
 </html>
