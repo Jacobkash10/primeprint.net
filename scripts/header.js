@@ -84,14 +84,14 @@ export function init() {
       <h4>Specialty Products</h4>
       <a href="product-detail.html?id=59">Mounted Canvas</a>
       <a href="product-detail.html?id=60">Packaging</a>
-      <a href="service.html?id=passport-photos">Passport Photos</a>
+      <a href="product-detail.html?id=61">Passport Photos</a>
     </div>
     <div class="menu-column">
       <h4>Promotional Items</h4>
-      <a href="product-detail.html?id=61">Buttons</a>
-      <a href="product-detail.html?id=62">Mugs</a>
-      <a href="product-detail.html?id=63">T-Shirts</a>
-      <a href="product-detail.html?id=64">Tote Bags</a>
+      <a href="product-detail.html?id=62">Buttons</a>
+      <a href="product-detail.html?id=63">Mugs</a>
+      <a href="product-detail.html?id=64">T-Shirts</a>
+      <a href="product-detail.html?id=65">Tote Bags</a>
     </div>
   `,
 };

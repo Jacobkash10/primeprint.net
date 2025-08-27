@@ -50,10 +50,12 @@ a {
 
 .hero2 {
       width: 29%;
+      height: 100%;
 }
 
 .hero3 {
       width: 30%;
+      height: 100%;
 }
 
 .hero1 h1 {
@@ -116,7 +118,7 @@ a {
 
 .hero__image .itemm__img {
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 30px;
       overflow: hidden;
       transition: transform 0.3s ease;
@@ -143,29 +145,48 @@ a {
 
 .hero1 img {
       width: 100%;
-      height: auto;
+      height: 100%;
       border-radius: 30px;
       margin-top: 30px;
 }
 
 .hero2 img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+}
+
+.hero3 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border-radius: 30px;
 }
 
 .hero2 .top {
       margin-bottom: 25px;
+      height: 440px;
+}
+
+.hero2 .bottom {
+      height: 390px;
 }
 
 .hero3 img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       border-radius: 30px;
 }
 
 .hero3 .top {
       margin-bottom: 25px;
+      height: 220px;
+}
+
+.hero3 .bottom {
+      height: 610px;
 }
 
 .nav-center-panel {
@@ -1710,7 +1731,7 @@ body.lb-no-scroll { overflow: hidden; }
 
       .hero__container {
             justify-content: space-between;
-            gap: 30px;
+            gap: 15px;
       }
 
       .hero1 h1 {
@@ -1729,6 +1750,24 @@ body.lb-no-scroll { overflow: hidden; }
 
       .hero3 {
             width: 32%;
+      }
+
+      .hero2 .top {
+            margin-bottom: 10px;
+            height: 360px;
+      }
+
+      .hero2 .bottom {
+            height: 310px;
+      }
+
+      .hero3 .top {
+            margin-bottom: 10px;
+            height: 190px;
+      }
+
+      .hero3 .bottom {
+            height: 480px;
       }
 
       .passport__left img {
@@ -1763,17 +1802,17 @@ body.lb-no-scroll { overflow: hidden; }
 
 @media (max-width: 1000px) {
 
-      .hero1 {
+      /* .hero1 {
             width: 50%;
-      }
+      } */
 
-      .hidden {
+      /* .hidden {
             display: none;
       }
 
       .sliders__hero {
             display: block;
-      }
+      } */
 
       .works__content {
             flex-wrap: wrap;
@@ -1814,16 +1853,16 @@ body.lb-no-scroll { overflow: hidden; }
 
       .hero__container {
             justify-content: start;
-            gap: 10px;
+            gap: 15px;
       }
 
       .hero1 {
-            width: 70%;
+            width: 60%;
       }
 
-      .sliders__hero {
+      /* .sliders__hero {
             width: 30%;
-      }
+      } */
 
       .hero1 .hero__buttons {
             display: flex;
@@ -1832,9 +1871,9 @@ body.lb-no-scroll { overflow: hidden; }
             gap: 20px;
       }
 
-      .hero2 {
+      /* .hero2 {
             width: 50%;
-      }
+      } */
 
       .badges__container {
             flex-wrap: wrap;
@@ -2021,22 +2060,50 @@ body.lb-no-scroll { overflow: hidden; }
 @media (max-width: 760px) {
 
       .hero__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: flex-start;
+            flex-wrap: wrap;
             width: 100%;
             gap: 20px;
       }
 
       .hero1 {
+            width: 55%;
+      }
+
+      .hero2 {
+            width: 40%;
+      }
+
+      .hero2 .top {
+            margin-bottom: 25px;
+            height: 360px;
+      }
+
+      .hero2 .bottom {
+            height: 350px;
+      }
+
+      .hero3 {
             width: 100%;
+            display: flex;
+            gap: 20px;
+      }
+
+      .hero3 .top {
+            height: 300px;
+      }
+
+      .hero3 .bottom {
+            height: 300px;
       }
 
       .hero1 h1 {
             font-size: 2.5rem;
             line-height: 3rem;
             max-width: fit-content;
+      }
+
+      .hero1 p {
+            margin: 15px 0;
       }
 }
 
@@ -2059,6 +2126,11 @@ body.lb-no-scroll { overflow: hidden; }
             margin-top: 10px;
       }
 
+      .hero1 h1 {
+            font-size: 2.2rem;
+            max-width: fit-content;
+      }
+
       .hero__texts h1 {
             font-size: 2.5rem;
             line-height: 2.4rem;
@@ -2068,7 +2140,7 @@ body.lb-no-scroll { overflow: hidden; }
       .hero__texts p {
             font-size: 1rem;
             max-width: fit-content;
-            margin: 10px 0;
+            margin: 8px 0;
       }
 
       .service__buttons {
@@ -2473,6 +2545,63 @@ body.lb-no-scroll { overflow: hidden; }
             margin-top: 10px;
       }
 
+      .hero__container {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+      }
+
+      .hero1 {
+            width: 100%;
+      }
+
+      .hero__image {
+            height: 200px;
+      }
+
+      .hero__image img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+      }
+
+      .hero2 {
+            width: 100%;
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+      }
+
+      .hero2 .top {
+            margin-bottom: 25px;
+            height: 200px;
+            width: 50%;
+      }
+
+      .hero2 .bottom {
+            height: 200px;
+            width: 50%;
+      }
+
+      .hero3 {
+            width: 100%;
+            display: flex;
+            gap: 15px;
+            margin-top: -20px;
+      }
+
+      .hero3 .top {
+            height: 200px;
+            width: 50%;
+      }
+
+      .hero3 .bottom {
+            height: 200px;
+            width: 50%;
+      }
+
       .hero1 h1 {
             font-size: 2.2rem;
             max-width: fit-content;
@@ -2482,7 +2611,6 @@ body.lb-no-scroll { overflow: hidden; }
             font-size: 1rem;
             line-height: 1.5rem;
             max-width: fit-content;
-            margin: 20px 0;
       }
 
       .passport__text h2 {
@@ -2528,21 +2656,6 @@ body.lb-no-scroll { overflow: hidden; }
             flex-wrap: wrap;
       }
 
-      .prime__services__top {
-            flex-direction: column;
-            align-items: start;
-      }
-
-      .prime__services__center {
-            flex-direction: column;
-            align-items: start;
-      }
-
-      .prime__services__bottom {
-            flex-direction: column;
-            align-items: start;
-      }
-
       .prime__services__top .prime__item {
             width: 100%;
       }
@@ -2553,6 +2666,22 @@ body.lb-no-scroll { overflow: hidden; }
 
       .prime__services__bottom .prime__item {
             width: 100%;
+      }
+
+      .prime__item__price {
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            border-radius: 20px;
+      }
+
+      .prime__card {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+            border-radius: 25px;
+            padding: 8px 15px;
       }
 
       .footer__top__text h2 {
@@ -2664,5 +2793,23 @@ body.lb-no-scroll { overflow: hidden; }
 
       .pass__item__details h3 {
             font-size: .9rem;
+      }
+}
+
+@media (max-width: 360px) {
+
+      .prime__services__top {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__center {
+            flex-direction: column;
+            align-items: start;
+      }
+
+      .prime__services__bottom {
+            flex-direction: column;
+            align-items: start;
       }
 }

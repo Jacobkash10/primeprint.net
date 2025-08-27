@@ -1022,6 +1022,23 @@ export const productsData = [
       },
       {
             id: 61,
+            name: "Passport Photos",
+            image: "../assets/images/photos.png",
+            otherImages: [
+              "assets/images/brown-kraft.png",
+              "assets/images/brown-kraft.png",
+              "assets/images/brown-kraft.png",
+              "assets/images/brown-kraft.png"
+            ],
+            description: "Tailor-made packaging solutions to give your products a premium look. Includes boxes, labels, and stickers with custom finishes.",
+            category: "Specialty Products",
+            price: 15.99,
+            href: "https://www.primeprint.net/store/product-view.html/780/90343",
+            isNew: false,
+            addedAt: "2025-07-01"
+      },
+      {
+            id: 62,
             name: "Buttons",
             image: "../assets/images/buttons.jpeg",
             otherImages: [
@@ -1038,7 +1055,7 @@ export const productsData = [
             addedAt: "2025-07-01"
       },
       {
-            id: 62,
+            id: 63,
             name: "Mugs",
             image: "../assets/images/mugs.png",
             otherImages: [
@@ -1055,7 +1072,7 @@ export const productsData = [
             addedAt: "2025-07-01"
       },
       {
-            id: 63,
+            id: 64,
             name: "T-Shirts",
             image: "../assets/images/t-shirts.png",
             otherImages: [
@@ -1072,7 +1089,7 @@ export const productsData = [
             addedAt: "2025-07-01"
       },
       {
-            id: 64,
+            id: 65,
             name: "Tote Bags",
             image: "../assets/images/tote-bags.jpg",
             otherImages: [

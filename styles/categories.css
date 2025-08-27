@@ -277,8 +277,9 @@
 @media (max-width: 770px) {
 
       .product-grid {
-                  grid-template-columns: repeat(2, 1fr);
-            }
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+      }
 }
 
 @media (max-width: 700px) {
@@ -290,9 +291,19 @@
       .product__item a img {
             height: 100%;
       }
+
+      .product__card i {
+            font-size: 1.6rem;
+      }
 }
 
 @media (max-width: 500px) {
+
+      .badge-new{
+            top: 60px;
+            left: 8px;
+            font-size: 10px;
+      }
 
       .category__banner {
             width: 100%;
@@ -339,7 +350,7 @@
 @media (max-width: 450px) {
 
       .product-grid {
-            grid-template-columns: repeat(1, 1fr);
+            gap: 8px;
       }
 
       .product__item__price {
@@ -353,6 +364,9 @@
       .product__card {
             border-radius: 20px;
             padding: 5px 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 15px;
       }
 
       .product__card h5 {
@@ -360,7 +374,7 @@
       }
 
       .product__card i {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
       }
 
 }
