@@ -17,20 +17,13 @@ async function loadHTML(id, file, script) {
 }
 
 loadHTML("header", "sections/header.html", "header.js");
-loadHTML("header", "sections/header.html", "search.js"); 
-loadHTML("header", "sections/header.html", "navBottom.js"); 
 loadHTML("footer", "sections/footer.html", "footer.js");
 
 const modulesToInit = [
-  'hero.js',
-  // 'services.js',
-  'productsHome.js',
-  'our.js',
+  'home.js',
   'filterByCategory.js',
   'servicePage.js',
   'serviceDetails.js',
-  'post.js',
-  'work.js',
   'categoryPage.js',
   'productDetail.js'
 ];

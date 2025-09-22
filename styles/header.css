@@ -41,13 +41,16 @@
 
 
 .navbar {
+      border-bottom: #e5e7eb 1px solid;
+}
+
+.nav-container {
       width: 100%;
       display: flex;
       justify-content: space-between;
       gap: 50px;
       align-items: center;
       padding: 20px 15px;
-      border-bottom: #e5e7eb 1px solid;
 }
 
 .nav-left {
@@ -236,6 +239,11 @@
       height: 32px;
 }
 
+.nav-icon .user-icon {
+      width: 28px;
+      height: 28px;
+}
+
 .cart {
       border-left: #72b7e4 1px solid;
       padding-left: 10px;
@@ -280,7 +288,7 @@
   background-color: #fff;
   position: relative;
   box-shadow: 0cqb 12px 15px -1px rgba(145,145,145,0.3);
-  padding: 0 20px;
+  width: 100%;
 }
 
 .nav-menu {
@@ -295,7 +303,6 @@
   justify-content: space-between;
   width: 100%;
   list-style: none;
-  flex-wrap: wrap;
 }
 
 .nav-menu li {
@@ -590,28 +597,20 @@
 
 @media (min-width: 1920px) {
 
-  .container {
-      max-width: 1400px;
-      padding: 0 40px;
-  }
+      .container {
+            max-width: 1400px;
+            padding: 0 40px;
+      }
 
-  .nav-menu {
-      padding: 0 15%;
-}
-
-  .navbar {
-      padding: 20px 15%;
-  }
-
-  .nav-bottom {
-      padding: 0;
-}
+      .navbar {
+            padding: 20px 0;
+      }
 
 }
 
 @media (max-width: 1200px) {
 
-      .navbar {
+      .nav-container {
             padding: 10px 10px;
       }
 
@@ -666,6 +665,11 @@
       .nav-icon img {
             width: 25px;
             height: 25px;
+      }
+
+      .nav-icon .user-icon {
+            width: 21px;
+            height: 21px;
       }
 
       .nav-center.open {
@@ -902,6 +906,11 @@
       .nav-icon img {
             width: 22px;
             height: 22px;
+      }
+
+      .nav-icon .user-icon {
+            width: 20px;
+            height: 20px;
       }
 
       .text p {
