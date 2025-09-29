@@ -1459,6 +1459,55 @@ body.lb-no-scroll { overflow: hidden; }
       right: 0px;
 } */
 
+/* Bouton Back to Top */
+
+.back-to-top{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 999px;
+  background: #72b7e4;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: opacity .25s ease, transform .25s ease, visibility 0s .25s;
+  visibility: hidden;
+}
+
+.back-to-top .icon{
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: currentColor;
+}
+
+.back-to-top[data-visible="true"]{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible{
+  background: #37855d;
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .back-to-top{
+    transition: none;
+  }
+}
+
 /* media query */
 
 @media (min-width: 1920px) {
@@ -2461,6 +2510,17 @@ body.lb-no-scroll { overflow: hidden; }
             top: -200px;
             right: -550px;
       } */
+
+      .back-to-top{
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+      }
+
+            .back-to-top .icon{
+            width: 18px;
+            height: 18px;
+      }
 }
 
 @media (max-width: 590px) {

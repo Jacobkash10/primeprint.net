@@ -107,4 +107,43 @@ export function init() {
   });
 
   big.addEventListener("click", () => showAt(currentIndex + 1));
+
+    // Back to top button
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  const SHOW_AFTER = 300;
+
+  const setVisible = (v) => {
+    btn.setAttribute('data-visible', v ? 'true' : 'false');
+    btn.setAttribute('aria-hidden', v ? 'false' : 'true');
+  };
+
+  const onScroll = () => {
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    setVisible(y > SHOW_AFTER);
+  };
+
+  const scrollToTop = () => {
+    const prefersReduced =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReduced) {
+      window.scrollTo(0, 0);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  btn.addEventListener('click', scrollToTop);
+
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      scrollToTop();
+    }
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', onScroll);
 }

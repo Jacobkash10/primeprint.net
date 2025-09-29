@@ -96,9 +96,52 @@
             </div>
       </section>
 
+      <button id="backToTop"
+          class="back-to-top"
+          type="button"
+          aria-label="Back to top"
+          title="Back to top"
+          aria-hidden="true"
+      >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M12 4l-7 7h4v9h6v-9h4z"/>
+            </svg>
+      </button>
+
       <div id="footer"></div>
 
       <script src="main.js"></script>
+      
+      <script>
+        (() => {
+          const btn = document.getElementById('backToTop');
+          if (!btn) return;
+
+          const SHOW_AFTER = 300; // px
+
+          const setVisible = (v) => {
+            btn.setAttribute('data-visible', v ? 'true' : 'false');
+            btn.setAttribute('aria-hidden', v ? 'false' : 'true');
+          };
+
+          const onScroll = () => {
+            const y = window.pageYOffset || document.documentElement.scrollTop;
+            setVisible(y > SHOW_AFTER);
+          };
+
+          const scrollToTop = () => {
+            const prefersReduced =
+              window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReduced) window.scrollTo(0, 0);
+            else window.scrollTo({ top: 0, behavior: 'smooth' });
+          };
+
+          btn.addEventListener('click', scrollToTop);
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('load', onScroll);
+        })();
+      </script>
 
 </body>
 </html>
