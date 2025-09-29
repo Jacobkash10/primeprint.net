@@ -138,13 +138,15 @@ const container = document.querySelector('.works__content');
 
   if (!container2) return;
 
-  const featured = productsData.slice(0, 8);
+  const featured = [...productsData]
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 8);
 
   container2.innerHTML = featured
     .map(
       (p) => `
       <div class="product__item">
-        <a href="product-detail.html?id=${p.id}">
+        <a href="${p.href}">
           ${p.isNew ? '<span class="badge-new">New</span>' : ''}
           <div class="inner">
             <img src="${p.image}" alt="${p.name}">
