@@ -146,7 +146,7 @@ const container = document.querySelector('.works__content');
     .map(
       (p) => `
       <div class="product__item">
-        <a href="${p.href}">
+        <a href="product-detail.html?id=${p.id}">
           ${p.isNew ? '<span class="badge-new">New</span>' : ''}
           <div class="inner">
             <img src="${p.image}" alt="${p.name}">
