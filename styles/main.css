@@ -2639,6 +2639,10 @@ body.lb-no-scroll { overflow: hidden; }
 
 @media (max-width: 500px) {
 
+      body#no-mobile-search .search-wrapper-responsive {
+            display: none !important;
+      }
+
       .container {
             padding: 0 10px;
       }

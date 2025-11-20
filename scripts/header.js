@@ -288,7 +288,7 @@ moLinks.observe(document.querySelector('.nav-bottom') || document.body, { childL
     { name: "Promotional Item", link: "category.html?category=Promotional%20Item" },
   ];
 
-  document.querySelectorAll(".search-wrapper, .search-wrapper-responsive").forEach(wrapper => {
+  document.querySelectorAll(".search-wrapper, .search-wrapper-responsive, .search-wrapper-category").forEach(wrapper => {
     const input = wrapper.querySelector("[data-search-input]");
     const suggestionList = wrapper.querySelector("[data-suggestions]");
 
@@ -361,4 +361,47 @@ moLinks.observe(document.querySelector('.nav-bottom') || document.body, { childL
     });
   }
 
+  // auth
+    const isLoggedIn = localStorage.getItem("userLogged") === "true";
+
+    const signInBlocks = document.querySelectorAll(".signin-block");
+    const loggedBlocks = document.querySelectorAll(".logged-block");
+
+    if (isLoggedIn) {
+        // Cacher tous les "Sign In"
+        signInBlocks.forEach(el => el.style.display = "none");
+        // Afficher tous les blocs logged (desktop + mobile)
+        loggedBlocks.forEach(el => el.style.display = "flex");
+    } else {
+        signInBlocks.forEach(el => el.style.display = "flex");
+        loggedBlocks.forEach(el => el.style.display = "none");
+    }
+
+    // Gestion des dropdowns (pour chaque user-dropdown)
+    document.querySelectorAll(".user-dropdown").forEach(dropdown => {
+        const btn = dropdown.querySelector(".user-btn");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        if (!btn || !menu) return;
+
+        btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("open");
+        });
+    });
+
+    document.addEventListener("click", () => {
+        document.querySelectorAll(".user-dropdown.open").forEach(d => {
+            d.classList.remove("open");
+        });
+    });
+
+    document.querySelectorAll("#logout-btn, #logout-btn-desktop, #logout-btn-mobile").forEach(btn => {
+        if (!btn) return;
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            localStorage.removeItem("userLogged");
+            window.location.reload();
+        });
+    });
 }

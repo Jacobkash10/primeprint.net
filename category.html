@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="styles/footer.css">
       <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body id="no-mobile-search">
 
   <div id="header"></div>
 
@@ -32,6 +32,18 @@
           <option value="price-low">Price: Low to High</option>
           <option value="price-high">Price: High to Low</option>
         </select>
+      </div>
+    </section>
+
+    <section id="categorySearchSection">
+      <div class="search-wrapper-category">
+        <div class="search-bar">
+          <input type="text" placeholder="Search ..." data-search-input autocomplete="off" />
+            <button class="search-button">
+              <i class='bx bx-search'></i>
+            </button>
+          </div>
+          <ul class="suggestions-list" data-suggestions></ul>
       </div>
     </section>
 
@@ -76,6 +88,30 @@
   <div id="footer"></div>
 
   <script src="main.js"></script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+      const section = document.getElementById("categorySearchSection");
+      const searchBar = document.querySelector(".search-wrapper-category");
+
+      if (!section || !searchBar) return;
+
+      const observer = new IntersectionObserver(
+          ([entry]) => {
+              if (!entry.isIntersecting) {
+                  searchBar.classList.add("sticky");
+              } else {
+                  searchBar.classList.remove("sticky");
+              }
+          },
+          { threshold: 0 }
+      );
+
+      observer.observe(section);
+  });
+  </script>
+
 
 </body>
 </html>
